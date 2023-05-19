@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="ImGui">
+      <UniqueIdentifier>{875fe693-579a-4465-ba7a-ed3c52075509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Headers">
+      <UniqueIdentifier>{3bd9f99c-c704-439f-ad4e-1713b59952a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ImGui\Source">
+      <UniqueIdentifier>{bd8fd5c1-eb8d-4b1e-a577-08230aa595d7}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="CardsEditor.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui.cpp">
+      <Filter>ImGui\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_demo.cpp">
+      <Filter>ImGui\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_draw.cpp">
+      <Filter>ImGui\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_tables.cpp">
+      <Filter>ImGui\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_widgets.cpp">
+      <Filter>ImGui\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_impl_glfw.cpp">
+      <Filter>ImGui\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_impl_opengl3.cpp">
+      <Filter>ImGui\Source</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libs\imgui\imconfig.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_internal.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imstb_rectpack.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imstb_textedit.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imstb_truetype.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_impl_glfw.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_impl_opengl3.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>ImGui\Headers</Filter>
+    </ClInclude>
+  </ItemGroup>
+</Project>
