@@ -107,7 +107,7 @@
       <AdditionalIncludeDirectories>C:\Projects\CardsEditor\CardsEditor\libs\glfw\include\GLFW;C:\Projects\CardsEditor\CardsEditor\libs\glfw\include;C:\Projects\CardsEditor\CardsEditor\libs\imgui;C:\Projects\CardsEditor\CardsEditor\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
-      <SubSystem>Console</SubSystem>
+      <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
       <AdditionalLibraryDirectories>C:\Projects\CardsEditor\CardsEditor\libs\glfw\lib-vc2019;C:\Projects\CardsEditor\CardsEditor\libs\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
@@ -130,7 +130,9 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="CardsEditor.cpp" />
+    <ClCompile Include="editor_ui.cpp" />
+    <ClCompile Include="editor_scene.cpp" />
+    <ClCompile Include="start_app.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
     <ClCompile Include="libs\imgui\imgui_demo.cpp" />
     <ClCompile Include="libs\imgui\imgui_draw.cpp" />
@@ -140,6 +142,8 @@
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="editor_scene.h" />
+    <ClInclude Include="editor_ui.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="libs\imgui\imgui.h" />
     <ClInclude Include="libs\imgui\imgui_impl_glfw.h" />
