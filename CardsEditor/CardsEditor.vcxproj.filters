@@ -1,93 +1,94 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="Source Files">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;c++;cppm;ixx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{105281f8-31da-4c21-bcef-c289f6c19508}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hh;hpp;hxx;h++;hm;inl;inc;ipp;xsd</Extensions>
-    </Filter>
-    <Filter Include="Resource Files">
-      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
-      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
-    </Filter>
-    <Filter Include="ImGuiGlfw">
+    <Filter Include="ThirdParty\ImGuiGlfw">
       <UniqueIdentifier>{875fe693-579a-4465-ba7a-ed3c52075509}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ImGuiGlfw\Headers">
+    <Filter Include="ThirdParty\ImGuiGlfw\Headers">
       <UniqueIdentifier>{3bd9f99c-c704-439f-ad4e-1713b59952a8}</UniqueIdentifier>
     </Filter>
-    <Filter Include="ImGuiGlfw\Source">
+    <Filter Include="ThirdParty\ImGuiGlfw\Source">
       <UniqueIdentifier>{bd8fd5c1-eb8d-4b1e-a577-08230aa595d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{77d7eaf7-cc23-4f6b-abaa-d52cb9b42b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor">
+      <UniqueIdentifier>{06c45505-cd84-44bd-a8f2-5fcefefc36af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor\Scene">
+      <UniqueIdentifier>{71df1e9a-ff06-4ac7-a2bb-7c12450ad97e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor\Gui">
+      <UniqueIdentifier>{1de9917f-4858-4dbc-93a1-311437147616}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="start_app.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="libs\imgui\imgui.cpp">
-      <Filter>ImGuiGlfw\Source</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui\imgui_demo.cpp">
-      <Filter>ImGuiGlfw\Source</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui\imgui_draw.cpp">
-      <Filter>ImGuiGlfw\Source</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui\imgui_tables.cpp">
-      <Filter>ImGuiGlfw\Source</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui\imgui_widgets.cpp">
-      <Filter>ImGuiGlfw\Source</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui\imgui_impl_glfw.cpp">
-      <Filter>ImGuiGlfw\Source</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="libs\imgui\imgui_impl_opengl3.cpp">
-      <Filter>ImGuiGlfw\Source</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="start_app.cpp" />
+    <ClCompile Include="editor_scene.cpp">
+      <Filter>Code\Editor\Scene</Filter>
     </ClCompile>
     <ClCompile Include="editor_ui.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="editor_scene.cpp">
-      <Filter>Source Files</Filter>
+      <Filter>Code\Editor\Gui</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\imgui\imconfig.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imgui.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imgui_internal.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imstb_rectpack.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imstb_textedit.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imstb_truetype.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imgui_impl_glfw.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imgui_impl_opengl3.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="libs\imgui\imgui_impl_opengl3_loader.h">
-      <Filter>ImGuiGlfw\Headers</Filter>
-    </ClInclude>
-    <ClInclude Include="editor_ui.h">
-      <Filter>Header Files</Filter>
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
     <ClInclude Include="editor_scene.h">
-      <Filter>Header Files</Filter>
+      <Filter>Code\Editor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_ui.h">
+      <Filter>Code\Editor\Gui</Filter>
     </ClInclude>
   </ItemGroup>
 </Project>
