@@ -70,6 +70,9 @@
     <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LibraryPath>C:\Projects\CardsEditor\CardsEditor\libs;$(LibraryPath)</LibraryPath>
+  </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
       <WarningLevel>Level3</WarningLevel>
@@ -104,7 +107,7 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\CardsEditor\CardsEditor\libs\glfw\include\GLFW;C:\Projects\CardsEditor\CardsEditor\libs\glfw\include;C:\Projects\CardsEditor\CardsEditor\libs\imgui;C:\Projects\CardsEditor\CardsEditor\libs;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\Projects\CardsEditor\CardsEditor\libs\glad\include;C:\Projects\CardsEditor\CardsEditor\libs;C:\Projects\CardsEditor\CardsEditor\libs\glfw\include\GLFW;C:\Projects\CardsEditor\CardsEditor\libs\glfw\include;C:\Projects\CardsEditor\CardsEditor\libs\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -132,6 +135,8 @@
   <ItemGroup>
     <ClCompile Include="editor_ui.cpp" />
     <ClCompile Include="editor_scene.cpp" />
+    <ClCompile Include="libs\glad\src\glad.c" />
+    <ClCompile Include="shader.cpp" />
     <ClCompile Include="start_app.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
     <ClCompile Include="libs\imgui\imgui_demo.cpp" />
@@ -153,6 +158,14 @@
     <ClInclude Include="libs\imgui\imstb_rectpack.h" />
     <ClInclude Include="libs\imgui\imstb_textedit.h" />
     <ClInclude Include="libs\imgui\imstb_truetype.h" />
+    <ClInclude Include="mesh.h" />
+    <ClInclude Include="shader.h" />
+    <ClInclude Include="triangle.h" />
+    <ClInclude Include="vertex.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="defaul.vert" />
+    <None Include="default.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

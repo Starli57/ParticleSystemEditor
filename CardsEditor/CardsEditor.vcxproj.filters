@@ -25,6 +25,12 @@
     <Filter Include="Code\Editor\Gui">
       <UniqueIdentifier>{1de9917f-4858-4dbc-93a1-311437147616}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Graphics">
+      <UniqueIdentifier>{ac5b95c0-c344-40a4-af9f-775067dc6060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Graphics\Shader">
+      <UniqueIdentifier>{ed3d276a-d245-467a-9a6f-9894d05b9158}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -54,6 +60,12 @@
     </ClCompile>
     <ClCompile Include="editor_ui.cpp">
       <Filter>Code\Editor\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>Code\Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\glad\src\glad.c">
+      <Filter>ThirdParty</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -90,5 +102,25 @@
     <ClInclude Include="editor_ui.h">
       <Filter>Code\Editor\Gui</Filter>
     </ClInclude>
+    <ClInclude Include="vertex.h">
+      <Filter>Code\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="triangle.h">
+      <Filter>Code\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Code\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Code\Graphics\Shader</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="default.frag">
+      <Filter>Code\Graphics\Shader</Filter>
+    </None>
+    <None Include="defaul.vert">
+      <Filter>Code\Graphics\Shader</Filter>
+    </None>
   </ItemGroup>
 </Project>

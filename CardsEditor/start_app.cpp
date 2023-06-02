@@ -8,7 +8,9 @@
 
 #include <iostream>
 #include <stdio.h>
+
 #include <GLFW/glfw3.h> 
+
 
 void glfw_error_callback(int error, const char* description)
 {
@@ -47,6 +49,9 @@ int WinMain()
         glfwTerminate();
         return 1;
     }
+
+    glfwMakeContextCurrent(window);
+    gladLoadGL();
 
     CardsEditor::EditorScene* scene = new CardsEditor::EditorScene();
     CardsEditor::EditorUi* editorUi = new CardsEditor::EditorUi();

@@ -1,9 +1,6 @@
 
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
-
 #include "editor_ui.h"
+#include "shader.h"
 
 namespace CardsEditor
 {
@@ -34,11 +31,17 @@ namespace CardsEditor
 
             if (ImGui::Button("Button"))                            // Buttons return true when clicked (most widgets return true when edited/activated)
                 counter++;
+
             ImGui::SameLine();
             ImGui::Text("counter = %d", counter);
 
             ImGuiIO& io = ImGui::GetIO();
             ImGui::Text("Application average %.3f ms/frame (%.1f FPS)", 1000.0f / io.Framerate, io.Framerate);
+
+            static char shaderLog[200];
+            Graphics::Shader* defaultShader = new Graphics::Shader("default.vert", "default.frag", shaderLog);
+            ImGui::Text("ShaderLog: \"%s\"", shaderLog);
+
             ImGui::End();
         }
 
