@@ -3,6 +3,8 @@
 
 #include <glad/glad.h> 
 
+#include "log_console.h"
+
 #include "shader.h"
 
 namespace CardsEditor

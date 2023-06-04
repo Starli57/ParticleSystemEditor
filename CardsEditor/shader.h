@@ -9,6 +9,9 @@
 #include <sstream>
 #include <iostream>
 
+#include "logger.h"
+#include "di.h"
+
 namespace Graphics
 {
 	class Shader 
@@ -16,7 +19,7 @@ namespace Graphics
 	public:
 		unsigned int id;
 
-		Shader(const char* vertexPath, const char* fragmentPath, char* shaderlog);
+		Shader(const char* vertexPath, const char* fragmentPath);
 
 		void Use();
 		void SetBool(const std::string& name, bool value) const;

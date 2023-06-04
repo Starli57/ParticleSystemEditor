@@ -133,11 +133,15 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="di.cpp" />
     <ClCompile Include="editor_ui.cpp" />
     <ClCompile Include="editor_scene.cpp" />
     <ClCompile Include="libs\glad\src\glad.c" />
+    <ClCompile Include="logger.cpp" />
+    <ClCompile Include="log_console.cpp" />
+    <ClCompile Include="react_value.cpp" />
     <ClCompile Include="shader.cpp" />
-    <ClCompile Include="start_app.cpp" />
+    <ClCompile Include="main.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
     <ClCompile Include="libs\imgui\imgui_demo.cpp" />
     <ClCompile Include="libs\imgui\imgui_draw.cpp" />
@@ -147,6 +151,7 @@
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="di.h" />
     <ClInclude Include="editor_scene.h" />
     <ClInclude Include="editor_ui.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
@@ -158,7 +163,10 @@
     <ClInclude Include="libs\imgui\imstb_rectpack.h" />
     <ClInclude Include="libs\imgui\imstb_textedit.h" />
     <ClInclude Include="libs\imgui\imstb_truetype.h" />
+    <ClInclude Include="logger.h" />
+    <ClInclude Include="log_console.h" />
     <ClInclude Include="mesh.h" />
+    <ClInclude Include="react_value.h" />
     <ClInclude Include="shader.h" />
     <ClInclude Include="triangle.h" />
     <ClInclude Include="vertex.h" />

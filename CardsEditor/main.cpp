@@ -3,14 +3,18 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
-#include "editor_ui.h"
-#include "editor_scene.h"
-
 #include <iostream>
 #include <stdio.h>
 
+#include "editor_ui.h"
+#include "editor_scene.h"
+#include "di.h"
+#include "logger.h"
+
 #include <GLFW/glfw3.h> 
 
+//todo: need to add Console with logs window in gui 
+//as the first dev tool that will be helpful
 
 void glfw_error_callback(int error, const char* description)
 {
@@ -19,12 +23,14 @@ void glfw_error_callback(int error, const char* description)
 
 int WinMain()
 {
+    std::shared_ptr<Logging::Logger> logger = std::make_shared<Logging::Logger>();
+    Utilities::DI::Register(logger);
+
     glfwSetErrorCallback(glfw_error_callback);
     int initialized = glfwInit();
 
     if (!initialized)
     {
-        std::cout << "Can't initialize glfw";
         return 1;
     }
 
@@ -45,7 +51,6 @@ int WinMain()
     GLFWwindow* window = glfwCreateWindow(1280, 720, "Cards editor", nullptr, nullptr);
     if (window == nullptr)
     {
-        std::cout << "Failed to create app window";
         glfwTerminate();
         return 1;
     }

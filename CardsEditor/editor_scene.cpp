@@ -7,8 +7,7 @@ namespace CardsEditor
 
 	void EditorScene::Render() 
 	{
-		static char shaderLog[100];
-		Graphics::Shader *defaultShader = new Graphics::Shader("default.vert", "default.frag", shaderLog);
+		Graphics::Shader *defaultShader = new Graphics::Shader("default.vert", "default.frag");
 
 		float vertexes[] = 
 		{

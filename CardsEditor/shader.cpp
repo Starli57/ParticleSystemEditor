@@ -3,7 +3,7 @@
 namespace Graphics
 {
 
-    Shader::Shader(const char* vertexPath, const char* fragmentPath, char* shaderlog)
+    Shader::Shader(const char* vertexPath, const char* fragmentPath)
     {
         // 1. retrieve the vertex/fragment source code from filePath
         std::string vertexCode;
@@ -34,11 +34,13 @@ namespace Graphics
             vertexCode = vShaderStream.str();
             fragmentCode = fShaderStream.str();
 
-            strcpy_s(shaderlog, 200, "Shaders Files were read correctly");
+            std::shared_ptr<Logging::Logger> logger = Utilities::DI::Get<Logging::Logger>();
+            logger->Log("Shaders Files were read correctly");
         }
         catch (std::ifstream::failure& e)
         {
-            strcpy_s(shaderlog, 200, e.what());
+            std::shared_ptr<Logging::Logger> logger = Utilities::DI::Get<Logging::Logger>();
+            logger->Log(e.what());
         }
 
         const char* vShaderCode = vertexCode.c_str();
