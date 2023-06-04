@@ -1,13 +1,14 @@
 
 #include "editor_scene.h"
 #include "shader.h"
+#include "shaders_list.h"
 
 namespace CardsEditor
 {
 
 	void EditorScene::Render() 
 	{
-		Graphics::Shader *defaultShader = new Graphics::Shader("default.vert", "default.frag");
+		Graphics::Shader *defaultShader = new Graphics::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
 
 		float vertexes[] = 
 		{

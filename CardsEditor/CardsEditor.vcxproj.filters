@@ -49,6 +49,9 @@
     <Filter Include="Code\Utility\DI">
       <UniqueIdentifier>{a64977e4-cd30-40d8-a96f-c9f361b8ccd1}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{084edefc-420f-4949-8502-8caa2a0c4844}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -156,13 +159,16 @@
     <ClInclude Include="di.h">
       <Filter>Code\Utility\DI</Filter>
     </ClInclude>
+    <ClInclude Include="shaders_list.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.frag">
-      <Filter>Code\Graphics\Shader</Filter>
+    <None Include="default.vert">
+      <Filter>Shaders</Filter>
     </None>
-    <None Include="defaul.vert">
-      <Filter>Code\Graphics\Shader</Filter>
+    <None Include="default.frag">
+      <Filter>Shaders</Filter>
     </None>
   </ItemGroup>
 </Project>

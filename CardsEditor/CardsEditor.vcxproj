@@ -168,11 +168,12 @@
     <ClInclude Include="mesh.h" />
     <ClInclude Include="react_value.h" />
     <ClInclude Include="shader.h" />
+    <ClInclude Include="shaders_list.h" />
     <ClInclude Include="triangle.h" />
     <ClInclude Include="vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="defaul.vert" />
+    <None Include="default.vert" />
     <None Include="default.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
