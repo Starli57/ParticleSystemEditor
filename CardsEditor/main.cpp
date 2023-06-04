@@ -13,12 +13,17 @@
 
 #include <GLFW/glfw3.h> 
 
-//todo: need to add Console with logs window in gui 
-//as the first dev tool that will be helpful
+//todo: import 3d model
+//todo: lightning
+//todo: camera
+//todo: options to scale/change position/rotation
+//todo: improve logger (update view only when data changed, shrink duplicated messages)
+
+#define MLogger Utilities::DI::Get<Logging::Logger>()
 
 void glfw_error_callback(int error, const char* description)
 {
-    std::cout << "GLFW Error %d: %s\n", error, description;
+    MLogger->Log("GLFW Error description: " + std::string(description));
 }
 
 int WinMain()

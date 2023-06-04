@@ -3,7 +3,7 @@
 namespace Graphics
 {
 
-    #define Logger Utilities::DI::Get<Logging::Logger>()
+    #define MLogger Utilities::DI::Get<Logging::Logger>()
 
     Shader::Shader(const char* vertexPath, const char* fragmentPath)
     {
@@ -38,7 +38,7 @@ namespace Graphics
         }
         catch (std::ifstream::failure& e)
         {
-            Logger->Log(e.what());
+            MLogger->Log(e.what());
         }
 
         const char* vShaderCode = vertexCode.c_str();
