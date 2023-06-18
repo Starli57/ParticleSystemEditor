@@ -133,14 +133,14 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="di.cpp" />
-    <ClCompile Include="editor_ui.cpp" />
-    <ClCompile Include="particle_system.cpp" />
+    <ClCompile Include="Di.cpp" />
+    <ClCompile Include="EditorUi.cpp" />
+    <ClCompile Include="ParticleSystem.cpp" />
     <ClCompile Include="libs\glad\src\glad.c" />
-    <ClCompile Include="logger.cpp" />
-    <ClCompile Include="log_console.cpp" />
-    <ClCompile Include="react_value.cpp" />
-    <ClCompile Include="shader.cpp" />
+    <ClCompile Include="Logger.cpp" />
+    <ClCompile Include="LogConsole.cpp" />
+    <ClCompile Include="ReactValue.cpp" />
+    <ClCompile Include="Shader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
     <ClCompile Include="libs\imgui\imgui_demo.cpp" />
@@ -151,9 +151,9 @@
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="di.h" />
-    <ClInclude Include="particle_system.h" />
-    <ClInclude Include="editor_ui.h" />
+    <ClInclude Include="Di.h" />
+    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="EditorUi.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="libs\imgui\imgui.h" />
     <ClInclude Include="libs\imgui\imgui_impl_glfw.h" />
@@ -163,18 +163,18 @@
     <ClInclude Include="libs\imgui\imstb_rectpack.h" />
     <ClInclude Include="libs\imgui\imstb_textedit.h" />
     <ClInclude Include="libs\imgui\imstb_truetype.h" />
-    <ClInclude Include="logger.h" />
-    <ClInclude Include="log_console.h" />
-    <ClInclude Include="mesh.h" />
-    <ClInclude Include="react_value.h" />
-    <ClInclude Include="shader.h" />
-    <ClInclude Include="shaders_list.h" />
-    <ClInclude Include="triangle.h" />
-    <ClInclude Include="vertex.h" />
+    <ClInclude Include="Logger.h" />
+    <ClInclude Include="LogConsole.h" />
+    <ClInclude Include="Mesh.h" />
+    <ClInclude Include="ReactValue.h" />
+    <ClInclude Include="Shader.h" />
+    <ClInclude Include="ShadersList.h" />
+    <ClInclude Include="Triangle.h" />
+    <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.vert" />
-    <None Include="default.frag" />
+    <None Include="Default.vert" />
+    <None Include="Default.frag" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

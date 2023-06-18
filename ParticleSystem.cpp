@@ -1,7 +1,4 @@
-
-#include "particle_system.h"
-#include "shader.h"
-#include "shaders_list.h"
+#include "ParticleSystem.h"
 
 namespace ParticleSystemEditor
 {

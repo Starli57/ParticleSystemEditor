@@ -6,10 +6,10 @@
 #include <iostream>
 #include <stdio.h>
 
-#include "editor_ui.h"
-#include "particle_system.h"
-#include "di.h"
-#include "logger.h"
+#include "EditorUi.h"
+#include "ParticleSystem.h"
+#include "Di.h"
+#include "Logger.h"
 
 #include <GLFW/glfw3.h> 
 

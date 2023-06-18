@@ -1,5 +1,5 @@
 
-#include "log_console.h"
+#include "LogConsole.h"
 
 namespace ParticleSystemEditor
 {

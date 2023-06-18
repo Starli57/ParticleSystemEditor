@@ -9,8 +9,8 @@
 #include <sstream>
 #include <iostream>
 
-#include "logger.h"
-#include "di.h"
+#include "Logger.h"
+#include "Di.h"
 
 namespace Graphics
 {

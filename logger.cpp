@@ -1,5 +1,5 @@
 
-#include "logger.h"
+#include "Logger.h"
 
 namespace Logging
 {

@@ -1,6 +1,6 @@
 
-#include "editor_ui.h"
-#include "shader.h"
+#include "EditorUi.h"
+#include "Shader.h"
 
 namespace ParticleSystemEditor
 {

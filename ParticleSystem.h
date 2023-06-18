@@ -3,9 +3,11 @@
 
 #include <glad/glad.h> 
 
-#include "log_console.h"
+#include "LogConsole.h"
 
-#include "shader.h"
+#include "ParticleSystem.h"
+#include "Shader.h"
+#include "ShadersList.h"
 
 namespace ParticleSystemEditor
 {
