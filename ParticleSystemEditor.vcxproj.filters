@@ -1,0 +1,174 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="ThirdParty">
+      <UniqueIdentifier>{105281f8-31da-4c21-bcef-c289f6c19508}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\ImGuiGlfw">
+      <UniqueIdentifier>{875fe693-579a-4465-ba7a-ed3c52075509}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\ImGuiGlfw\Headers">
+      <UniqueIdentifier>{3bd9f99c-c704-439f-ad4e-1713b59952a8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="ThirdParty\ImGuiGlfw\Source">
+      <UniqueIdentifier>{bd8fd5c1-eb8d-4b1e-a577-08230aa595d7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code">
+      <UniqueIdentifier>{77d7eaf7-cc23-4f6b-abaa-d52cb9b42b11}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor">
+      <UniqueIdentifier>{06c45505-cd84-44bd-a8f2-5fcefefc36af}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor\Scene">
+      <UniqueIdentifier>{71df1e9a-ff06-4ac7-a2bb-7c12450ad97e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor\Gui">
+      <UniqueIdentifier>{1de9917f-4858-4dbc-93a1-311437147616}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Graphics">
+      <UniqueIdentifier>{ac5b95c0-c344-40a4-af9f-775067dc6060}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Graphics\Shader">
+      <UniqueIdentifier>{ed3d276a-d245-467a-9a6f-9894d05b9158}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor\Gui\Windows">
+      <UniqueIdentifier>{d60f24c6-9dec-4784-9ae3-dac38f5af66d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Editor\Gui\Windows\LogConsole">
+      <UniqueIdentifier>{3d9a0336-456a-4403-b7f9-78fd93bcd0cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Logging">
+      <UniqueIdentifier>{843ec343-ac42-4013-8742-26bcb7b13cb8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Utility">
+      <UniqueIdentifier>{34432ed7-b184-450c-b8e5-235e80565216}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Utility\ReactValue">
+      <UniqueIdentifier>{f0dcbb3c-8d44-4101-b6e4-7e3f633bfc7f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Utility\DI">
+      <UniqueIdentifier>{a64977e4-cd30-40d8-a96f-c9f361b8ccd1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Shaders">
+      <UniqueIdentifier>{084edefc-420f-4949-8502-8caa2a0c4844}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libs\imgui\imgui.cpp">
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_demo.cpp">
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_draw.cpp">
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_tables.cpp">
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_widgets.cpp">
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_impl_glfw.cpp">
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\imgui\imgui_impl_opengl3.cpp">
+      <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
+    </ClCompile>
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="editor_scene.cpp">
+      <Filter>Code\Editor\Scene</Filter>
+    </ClCompile>
+    <ClCompile Include="editor_ui.cpp">
+      <Filter>Code\Editor\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="shader.cpp">
+      <Filter>Code\Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="libs\glad\src\glad.c">
+      <Filter>ThirdParty</Filter>
+    </ClCompile>
+    <ClCompile Include="log_console.cpp">
+      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
+    </ClCompile>
+    <ClCompile Include="logger.cpp">
+      <Filter>Code\Logging</Filter>
+    </ClCompile>
+    <ClCompile Include="react_value.cpp">
+      <Filter>Code\Utility\ReactValue</Filter>
+    </ClCompile>
+    <ClCompile Include="di.cpp">
+      <Filter>Code\Utility\DI</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="libs\imgui\imconfig.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_internal.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imstb_rectpack.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imstb_textedit.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imstb_truetype.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_impl_glfw.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_impl_opengl3.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="libs\imgui\imgui_impl_opengl3_loader.h">
+      <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_scene.h">
+      <Filter>Code\Editor\Scene</Filter>
+    </ClInclude>
+    <ClInclude Include="editor_ui.h">
+      <Filter>Code\Editor\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="vertex.h">
+      <Filter>Code\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="triangle.h">
+      <Filter>Code\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="mesh.h">
+      <Filter>Code\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="shader.h">
+      <Filter>Code\Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="log_console.h">
+      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
+    </ClInclude>
+    <ClInclude Include="logger.h">
+      <Filter>Code\Logging</Filter>
+    </ClInclude>
+    <ClInclude Include="react_value.h">
+      <Filter>Code\Utility\ReactValue</Filter>
+    </ClInclude>
+    <ClInclude Include="di.h">
+      <Filter>Code\Utility\DI</Filter>
+    </ClInclude>
+    <ClInclude Include="shaders_list.h">
+      <Filter>Shaders</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="default.vert">
+      <Filter>Shaders</Filter>
+    </None>
+    <None Include="default.frag">
+      <Filter>Shaders</Filter>
+    </None>
+  </ItemGroup>
+</Project>
