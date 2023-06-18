@@ -1,7 +1,7 @@
 
 #include "log_console.h"
 
-namespace CardsEditor
+namespace ParticleSystemEditor
 {
 	void LogConsole::Render()
 	{

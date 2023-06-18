@@ -135,7 +135,7 @@
   <ItemGroup>
     <ClCompile Include="di.cpp" />
     <ClCompile Include="editor_ui.cpp" />
-    <ClCompile Include="editor_scene.cpp" />
+    <ClCompile Include="particle_system.cpp" />
     <ClCompile Include="libs\glad\src\glad.c" />
     <ClCompile Include="logger.cpp" />
     <ClCompile Include="log_console.cpp" />
@@ -152,7 +152,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="di.h" />
-    <ClInclude Include="editor_scene.h" />
+    <ClInclude Include="particle_system.h" />
     <ClInclude Include="editor_ui.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="libs\imgui\imgui.h" />

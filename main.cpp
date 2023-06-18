@@ -7,7 +7,7 @@
 #include <stdio.h>
 
 #include "editor_ui.h"
-#include "editor_scene.h"
+#include "particle_system.h"
 #include "di.h"
 #include "logger.h"
 
@@ -47,7 +47,7 @@ int WinMain()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 #endif
 
-    GLFWwindow* window = glfwCreateWindow(1280, 720, "Cards editor", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(800, 800, "Cards editor", nullptr, nullptr);
     if (window == nullptr)
     {
         glfwTerminate();
@@ -57,8 +57,8 @@ int WinMain()
     glfwMakeContextCurrent(window);
     gladLoadGL();
 
-    CardsEditor::EditorScene* scene = new CardsEditor::EditorScene();
-    CardsEditor::EditorUi* editorUi = new CardsEditor::EditorUi();
+    ParticleSystemEditor::ParticleSystem* particle = new ParticleSystemEditor::ParticleSystem();
+    ParticleSystemEditor::EditorUi* editorUi = new ParticleSystemEditor::EditorUi();
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
@@ -102,7 +102,7 @@ int WinMain()
         glClear(GL_COLOR_BUFFER_BIT);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
-        scene->Render();
+        particle->Render();
 
         if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
         {
@@ -124,7 +124,7 @@ int WinMain()
     glfwTerminate();
 
     delete(editorUi);
-    delete(scene);
+    delete(particle);
 
     return 0;
 }

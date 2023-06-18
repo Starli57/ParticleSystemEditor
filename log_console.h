@@ -7,7 +7,7 @@
 
 #include "shader.h"
 
-namespace CardsEditor
+namespace ParticleSystemEditor
 {
 	class LogConsole
 	{

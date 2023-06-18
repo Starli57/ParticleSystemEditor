@@ -7,9 +7,9 @@
 
 #include "shader.h"
 
-namespace CardsEditor
+namespace ParticleSystemEditor
 {
-	class EditorScene 
+	class ParticleSystem 
 	{
 	public:
 		void Render();

@@ -19,9 +19,6 @@
     <Filter Include="Code\Editor">
       <UniqueIdentifier>{06c45505-cd84-44bd-a8f2-5fcefefc36af}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\Editor\Scene">
-      <UniqueIdentifier>{71df1e9a-ff06-4ac7-a2bb-7c12450ad97e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\Editor\Gui">
       <UniqueIdentifier>{1de9917f-4858-4dbc-93a1-311437147616}</UniqueIdentifier>
     </Filter>
@@ -52,6 +49,9 @@
     <Filter Include="Shaders">
       <UniqueIdentifier>{084edefc-420f-4949-8502-8caa2a0c4844}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\ParticleSystem">
+      <UniqueIdentifier>{420e71b5-74bc-49bd-b1e1-ad2dd0c4ee82}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -76,9 +76,6 @@
       <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="editor_scene.cpp">
-      <Filter>Code\Editor\Scene</Filter>
-    </ClCompile>
     <ClCompile Include="editor_ui.cpp">
       <Filter>Code\Editor\Gui</Filter>
     </ClCompile>
@@ -99,6 +96,9 @@
     </ClCompile>
     <ClCompile Include="di.cpp">
       <Filter>Code\Utility\DI</Filter>
+    </ClCompile>
+    <ClCompile Include="particle_system.cpp">
+      <Filter>Code\ParticleSystem</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -129,9 +129,6 @@
     <ClInclude Include="libs\imgui\imgui_impl_opengl3_loader.h">
       <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="editor_scene.h">
-      <Filter>Code\Editor\Scene</Filter>
-    </ClInclude>
     <ClInclude Include="editor_ui.h">
       <Filter>Code\Editor\Gui</Filter>
     </ClInclude>
@@ -161,6 +158,9 @@
     </ClInclude>
     <ClInclude Include="shaders_list.h">
       <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="particle_system.h">
+      <Filter>Code\ParticleSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

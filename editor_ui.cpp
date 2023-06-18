@@ -2,7 +2,7 @@
 #include "editor_ui.h"
 #include "shader.h"
 
-namespace CardsEditor
+namespace ParticleSystemEditor
 {
     EditorUi::EditorUi() 
     {
