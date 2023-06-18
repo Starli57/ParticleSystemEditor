@@ -71,7 +71,7 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <LibraryPath>C:\Projects\CardsEditor\CardsEditor\libs;$(LibraryPath)</LibraryPath>
+    <LibraryPath>C:\My\Projects\MapEditorCpp\CardsEditor\libs\glfw\lib-vc2022;C:\Projects\CardsEditor\CardsEditor\libs;$(LibraryPath)</LibraryPath>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -107,13 +107,13 @@
       <SDLCheck>true</SDLCheck>
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
-      <AdditionalIncludeDirectories>C:\Projects\CardsEditor\CardsEditor\libs\glad\include;C:\Projects\CardsEditor\CardsEditor\libs;C:\Projects\CardsEditor\CardsEditor\libs\glfw\include\GLFW;C:\Projects\CardsEditor\CardsEditor\libs\glfw\include;C:\Projects\CardsEditor\CardsEditor\libs\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <AdditionalIncludeDirectories>C:\My\Projects\MapEditorCpp\CardsEditor\libs\glad\include;C:\My\Projects\MapEditorCpp\CardsEditor\libs;C:\My\Projects\MapEditorCpp\CardsEditor\libs\glfw\include\GLFW;C:\My\Projects\MapEditorCpp\CardsEditor\libs\glfw\include;C:\My\Projects\MapEditorCpp\CardsEditor\libs\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <AdditionalDependencies>opengl32.lib;glfw3.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>C:\Projects\CardsEditor\CardsEditor\libs\glfw\lib-vc2019;C:\Projects\CardsEditor\CardsEditor\libs\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>C:\My\Projects\MapEditorCpp\CardsEditor\libs\glfw\lib-vc2019;C:\My\Projects\MapEditorCpp\CardsEditor\libs\glfw\lib-vc2022;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
