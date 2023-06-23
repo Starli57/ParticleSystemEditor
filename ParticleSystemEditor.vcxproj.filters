@@ -52,6 +52,9 @@
     <Filter Include="Code\ParticleSystem">
       <UniqueIdentifier>{420e71b5-74bc-49bd-b1e1-ad2dd0c4ee82}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Editor\Time">
+      <UniqueIdentifier>{afc2b38b-0b84-48c0-9aee-7318e1dad085}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -102,6 +105,9 @@
     </ClCompile>
     <ClCompile Include="LogConsole.cpp">
       <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
+    </ClCompile>
+    <ClCompile Include="Time.cpp">
+      <Filter>Code\Editor\Time</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -167,6 +173,9 @@
     </ClInclude>
     <ClInclude Include="ShadersList.h">
       <Filter>Shaders</Filter>
+    </ClInclude>
+    <ClInclude Include="Time.h">
+      <Filter>Code\Editor\Time</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

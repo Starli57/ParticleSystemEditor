@@ -150,6 +150,7 @@
     <ClCompile Include="libs\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="libs\imgui\imgui_tables.cpp" />
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
+    <ClCompile Include="Time.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Di.h" />
@@ -171,6 +172,7 @@
     <ClInclude Include="ReactValue.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShadersList.h" />
+    <ClInclude Include="Time.h" />
     <ClInclude Include="Triangle.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>

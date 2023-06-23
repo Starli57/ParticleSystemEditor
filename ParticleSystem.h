@@ -31,6 +31,7 @@ namespace ParticleSystemEditor
 		ParticleSystem();
 		~ParticleSystem();
 
+		void Update();
 		void Render();
 	};
 }

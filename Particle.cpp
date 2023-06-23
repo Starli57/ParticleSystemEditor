@@ -9,13 +9,29 @@ namespace ParticleSystemEditor
 	Particle::Particle(const glm::vec3 startPosition) 
 	{
 		shader = new Graphics::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
-		position = new glm::vec3(startPosition);
+
+		shader->Use();
+		SetupProjectionMatrix();
+
+		_position = new glm::vec3(startPosition);
+		_velocity = new glm::vec3(0, 0.01f, 0);
 	}
+
 
 	Particle::~Particle() 
 	{
-		delete position;
+		delete _position;
 		delete shader;
+	}
+
+	void Particle::Update() 
+	{
+		UpdatePosition();
+	}
+
+	void Particle::UpdatePosition() 
+	{
+		*_position += *_velocity;
 	}
 
 	void Particle::Render() 
@@ -51,19 +67,13 @@ namespace ParticleSystemEditor
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
 
-		shader->Use();
-
 		// create transformations
 		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-		glm::mat4 projection = glm::mat4(1.0f);
 
-		float widthHeightAspect = 1;
-		projection = glm::perspective(glm::radians(90.0f), widthHeightAspect, 0.1f, 1000.0f);
-		view = glm::translate(view, *position);
+		view = glm::translate(view, *_position);
 		view = glm::rotate(view, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
 		// pass transformation matrices to the shader
-		shader->setMat4("projection", projection); // note: currently we set the projection matrix each frame, but since the projection matrix rarely changes it's often best practice to set it outside the main loop only once.
 		shader->setMat4("view", view);
 
 		glm::mat4 model = glm::mat4(1.0f);
@@ -83,4 +93,12 @@ namespace ParticleSystemEditor
 		glDeleteBuffers(1, &EBO);
 	}
 
+	void Particle::SetupProjectionMatrix()
+	{
+		float widthHeightAspect = 1;//todo: calculate real aspect
+
+		glm::mat4 projection = glm::mat4(1.0f);
+		projection = glm::perspective(glm::radians(90.0f), widthHeightAspect, 0.1f, 1000.0f);
+		shader->setMat4("projection", projection);
+	}
 }

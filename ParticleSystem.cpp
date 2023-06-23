@@ -18,6 +18,14 @@ namespace ParticleSystemEditor
 		delete particles;
 	}
 
+	void ParticleSystem::Update()
+	{
+		for (Particle* particle : *particles)
+		{
+			particle->Update();
+		}
+	}
+
 	void ParticleSystem::Render()
 	{
 		for (Particle* particle : *particles)

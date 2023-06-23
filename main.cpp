@@ -5,11 +5,14 @@
 
 #include <iostream>
 #include <stdio.h>
+#include <chrono>
+#include <ctime>   
 
 #include "EditorUi.h"
 #include "ParticleSystem.h"
 #include "Di.h"
 #include "Logger.h"
+#include "Time.h"
 
 #include <GLFW/glfw3.h> 
 
@@ -24,6 +27,9 @@ int WinMain()
 {
     std::shared_ptr<Logging::Logger> logger = std::make_shared<Logging::Logger>();
     Utilities::DI::Register(logger);
+
+    std::shared_ptr<Time> time = std::make_shared<Time>();
+    Utilities::DI::Register(time);
 
     glfwSetErrorCallback(glfw_error_callback);
     int initialized = glfwInit();
@@ -57,8 +63,8 @@ int WinMain()
     glfwMakeContextCurrent(window);
     gladLoadGL();
 
-    ParticleSystemEditor::ParticleSystem* particle = new ParticleSystemEditor::ParticleSystem();
-    ParticleSystemEditor::EditorUi* editorUi = new ParticleSystemEditor::EditorUi();
+    std::unique_ptr<ParticleSystemEditor::ParticleSystem> particleSystem = std::make_unique<ParticleSystemEditor::ParticleSystem>();
+    std::unique_ptr<ParticleSystemEditor::EditorUi> editorUi = std::make_unique<ParticleSystemEditor::EditorUi>();
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1); // Enable vsync
@@ -88,10 +94,12 @@ int WinMain()
     ImGui_ImplOpenGL3_Init(glsl_version);
 
     ImVec4 clear_color = ImVec4(0.075f, 0.15f, 0.2f, 1.00f);
-
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();
+
+        time->Update();
+        particleSystem->Update();
 
         editorUi->Render();
 
@@ -102,7 +110,7 @@ int WinMain()
         glClear(GL_COLOR_BUFFER_BIT);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
-        particle->Render();
+        particleSystem->Render();
 
         if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
         {
@@ -113,6 +121,10 @@ int WinMain()
         }
 
         glfwSwapBuffers(window);
+
+        std::stringstream msg;
+        msg << "Frame: " << (time->GetDeltaTime());
+        MLogger->Log(msg.str());
     }
 
     // Cleanup
@@ -122,9 +134,6 @@ int WinMain()
 
     glfwDestroyWindow(window);
     glfwTerminate();
-
-    delete(editorUi);
-    delete(particle);
 
     return 0;
 }

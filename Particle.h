@@ -23,12 +23,20 @@ namespace ParticleSystemEditor
 	public:
 		Graphics::Shader* shader;
 
-		glm::vec3* position;
-
 		Particle();
 		Particle(const glm::vec3 startPosition);
 		~Particle();
 
+		void Update();
 		void Render();
+
+	private:
+		glm::vec3* _position;
+		glm::vec3* _velocity;
+		float _lifetime;
+
+		void SetupProjectionMatrix();
+
+		void UpdatePosition();
 	};
 }
