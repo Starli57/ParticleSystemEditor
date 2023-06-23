@@ -6,6 +6,7 @@
 #include "LogConsole.h"
 
 #include "ParticleSystem.h"
+#include "ParticleSettings.h"
 #include "Shader.h"
 #include "ShadersList.h"
 
@@ -21,19 +22,24 @@ namespace ParticleSystemEditor
 	class Particle
 	{
 	public:
-		Graphics::Shader* shader;
 
-		Particle();
-		Particle(const glm::vec3 startPosition);
+		Particle(ParticleSettings* particleSettings);
 		~Particle();
+
+		void SetupSettings(ParticleSettings* particleSettings);
 
 		void Update();
 		void Render();
 
 	private:
-		glm::vec3* _position;
-		glm::vec3* _velocity;
+		ParticleSettings* _particleSettings;
+		Graphics::Shader* _shader;
+
+		glm::vec3 _position;
+		glm::vec3 _velocity;
 		float _lifetime;
+
+		bool GetIsVisible();
 
 		void SetupProjectionMatrix();
 

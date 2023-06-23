@@ -109,6 +109,9 @@
     <ClCompile Include="Time.cpp">
       <Filter>Code\Editor\Time</Filter>
     </ClCompile>
+    <ClCompile Include="ParticleSettings.cpp">
+      <Filter>Code\ParticleSystem</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\imgui\imconfig.h">
@@ -176,6 +179,9 @@
     </ClInclude>
     <ClInclude Include="Time.h">
       <Filter>Code\Editor\Time</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSettings.h">
+      <Filter>Code\ParticleSystem</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

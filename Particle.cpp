@@ -4,24 +4,37 @@
 
 namespace ParticleSystemEditor
 {
-	Particle::Particle() : Particle(glm::vec3(0, 0, 0)) {}
-
-	Particle::Particle(const glm::vec3 startPosition) 
+	Particle::Particle(ParticleSettings* particleSettings)
 	{
-		shader = new Graphics::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
+		SetupSettings(particleSettings);
 
-		shader->Use();
+		_shader = new Graphics::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
+		_shader->Use();
+
 		SetupProjectionMatrix();
-
-		_position = new glm::vec3(startPosition);
-		_velocity = new glm::vec3(0, 0.01f, 0);
 	}
-
 
 	Particle::~Particle() 
 	{
-		delete _position;
-		delete shader;
+		delete _shader;
+	}
+
+	void Particle::SetupSettings(ParticleSettings* settings) 
+	{
+		//todo: replaced random logic to a separated class
+		std::random_device rd;
+		std::mt19937 gen(rd());
+		float min = -1.0f;
+		float max =  1.0f;
+		std::uniform_real_distribution<float> dist(min, max);
+		float randomNum = dist(gen);
+		//end
+
+		_particleSettings = settings;
+
+		float positionOffset = settings->startPositionSpawnRadius * randomNum;
+		_position = settings->startPosition + glm::vec3(positionOffset, positionOffset, positionOffset);
+		_velocity = settings->startVelocity;
 	}
 
 	void Particle::Update() 
@@ -31,7 +44,7 @@ namespace ParticleSystemEditor
 
 	void Particle::UpdatePosition() 
 	{
-		*_position += *_velocity;
+		_position += _velocity;
 	}
 
 	void Particle::Render() 
@@ -70,17 +83,17 @@ namespace ParticleSystemEditor
 		// create transformations
 		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
 
-		view = glm::translate(view, *_position);
+		view = glm::translate(view, _position);
 		view = glm::rotate(view, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
 		// pass transformation matrices to the shader
-		shader->setMat4("view", view);
+		_shader->setMat4("view", view);
 
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0, 0, 0));
 		float angle = 10;
 		model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
-		shader->setMat4("model", model);
+		_shader->setMat4("model", model);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
@@ -99,6 +112,11 @@ namespace ParticleSystemEditor
 
 		glm::mat4 projection = glm::mat4(1.0f);
 		projection = glm::perspective(glm::radians(90.0f), widthHeightAspect, 0.1f, 1000.0f);
-		shader->setMat4("projection", projection);
+		_shader->setMat4("projection", projection);
+	}
+
+	bool Particle::GetIsVisible()
+	{
+		return _lifetime > 0;
 	}
 }
