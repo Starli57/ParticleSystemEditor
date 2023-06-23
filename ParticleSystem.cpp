@@ -5,7 +5,8 @@ namespace ParticleSystemEditor
 	ParticleSystem::ParticleSystem()
 	{
 		particles = new std::vector<Particle*>();
-		particles->push_back(new Particle());
+		particles->push_back(new Particle(glm::vec3(-1, 0, -3)));
+		particles->push_back(new Particle(glm::vec3( 1, 0, -3)));
 	}
 
 	ParticleSystem::~ParticleSystem()
