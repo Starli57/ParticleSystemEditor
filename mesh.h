@@ -1,6 +1,4 @@
-
-#ifndef MESH_H
-#define MESH_H
+#pragma once
 
 #include <iostream>
 #include <vector>
@@ -14,4 +12,3 @@ namespace Graphics
 		std::vector<triangle> triangles;
 	};
 }
-#endif

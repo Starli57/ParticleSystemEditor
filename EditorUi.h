@@ -1,5 +1,4 @@
-#ifndef EDITOR_UI_H
-#define EDITOR_UI_H
+#pragma once
 
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
@@ -21,4 +20,3 @@ namespace ParticleSystemEditor
 		void Render();
 	};
 }
-#endif

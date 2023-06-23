@@ -1,5 +1,4 @@
-#ifndef TRIANGLE_H
-#define TRIANGLE_H
+#pragma once
 
 #include "vertex.h"
 
@@ -11,4 +10,3 @@ namespace Graphics
 		vertex verts[3];
 	};
 }
-#endif

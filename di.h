@@ -1,6 +1,4 @@
-
-#ifndef DI_H
-#define DI_H
+#pragma once
 
 #include <iostream>
 #include <unordered_map>
@@ -47,5 +45,3 @@ namespace Utilities
 		static std::unordered_map<std::type_index, std::shared_ptr<void>> dependencies;
 	};
 }
-
-#endif

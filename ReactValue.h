@@ -1,6 +1,4 @@
-
-#ifndef REACT_VALUE_H
-#define REACT_VALUE_H
+#pragma once
 
 #include <iostream>
 #include <functional>
@@ -21,5 +19,3 @@ namespace Utilities
         void Subscribe(std::function<void()> callback);
     };
 }
-
-#endif

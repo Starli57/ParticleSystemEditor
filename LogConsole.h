@@ -1,5 +1,4 @@
-#ifndef LOG_CONSOLE_H
-#define LOG_CONSOLE_H
+#pragma once
 
 #include "imgui.h"
 #include "imgui_impl_glfw.h"
@@ -15,4 +14,3 @@ namespace ParticleSystemEditor
 		void Render();
 	};
 }
-#endif

@@ -76,29 +76,32 @@
       <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="editor_ui.cpp">
-      <Filter>Code\Editor\Gui</Filter>
-    </ClCompile>
     <ClCompile Include="shader.cpp">
       <Filter>Code\Graphics\Shader</Filter>
     </ClCompile>
     <ClCompile Include="libs\glad\src\glad.c">
       <Filter>ThirdParty</Filter>
     </ClCompile>
-    <ClCompile Include="log_console.cpp">
-      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
-    </ClCompile>
     <ClCompile Include="logger.cpp">
       <Filter>Code\Logging</Filter>
-    </ClCompile>
-    <ClCompile Include="react_value.cpp">
-      <Filter>Code\Utility\ReactValue</Filter>
     </ClCompile>
     <ClCompile Include="di.cpp">
       <Filter>Code\Utility\DI</Filter>
     </ClCompile>
-    <ClCompile Include="particle_system.cpp">
+    <ClCompile Include="Particle.cpp">
       <Filter>Code\ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSystem.cpp">
+      <Filter>Code\ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="ReactValue.cpp">
+      <Filter>Code\Utility\ReactValue</Filter>
+    </ClCompile>
+    <ClCompile Include="EditorUi.cpp">
+      <Filter>Code\Editor\Gui</Filter>
+    </ClCompile>
+    <ClCompile Include="LogConsole.cpp">
+      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -129,9 +132,6 @@
     <ClInclude Include="libs\imgui\imgui_impl_opengl3_loader.h">
       <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="editor_ui.h">
-      <Filter>Code\Editor\Gui</Filter>
-    </ClInclude>
     <ClInclude Include="vertex.h">
       <Filter>Code\Graphics</Filter>
     </ClInclude>
@@ -144,23 +144,29 @@
     <ClInclude Include="shader.h">
       <Filter>Code\Graphics\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="log_console.h">
-      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
-    </ClInclude>
     <ClInclude Include="logger.h">
       <Filter>Code\Logging</Filter>
-    </ClInclude>
-    <ClInclude Include="react_value.h">
-      <Filter>Code\Utility\ReactValue</Filter>
     </ClInclude>
     <ClInclude Include="di.h">
       <Filter>Code\Utility\DI</Filter>
     </ClInclude>
-    <ClInclude Include="shaders_list.h">
-      <Filter>Shaders</Filter>
-    </ClInclude>
-    <ClInclude Include="particle_system.h">
+    <ClInclude Include="Particle.h">
       <Filter>Code\ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSystem.h">
+      <Filter>Code\ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="ReactValue.h">
+      <Filter>Code\Utility\ReactValue</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorUi.h">
+      <Filter>Code\Editor\Gui</Filter>
+    </ClInclude>
+    <ClInclude Include="LogConsole.h">
+      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
+    </ClInclude>
+    <ClInclude Include="ShadersList.h">
+      <Filter>Shaders</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

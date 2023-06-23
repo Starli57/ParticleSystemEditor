@@ -2,34 +2,29 @@
 
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>
-#include <iostream>
-
-#include <glm/glm.hpp>
-#include <glm/gtc/matrix_transform.hpp>
-#include <glm/gtc/type_ptr.hpp>
 
 #include "LogConsole.h"
 
 #include "ParticleSystem.h"
-
 #include "Shader.h"
 #include "ShadersList.h"
 
 #include "Vertex.h"
 #include "Triangle.h"
-#include "Particle.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace ParticleSystemEditor
 {
-	class Particle;
-
-	class ParticleSystem 
+	class Particle
 	{
 	public:
-		std::vector<Particle*>* particles;
+		Graphics::Shader* shader;
 
-		ParticleSystem();
-		~ParticleSystem();
+		Particle();
+		~Particle();
 
 		void Render();
 	};

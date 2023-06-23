@@ -1,5 +1,4 @@
-#ifndef VERTEX_H
-#define VERTEX_H
+#pragma once
 
 namespace Graphics
 {
@@ -7,6 +6,13 @@ namespace Graphics
 	{
 	public:
 		float position[3];
+
+		vertex SetPosition(float x, float y, float z) 
+		{
+			position[0] = x;
+			position[1] = y;
+			position[2] = z;
+			return *this;
+		}
 	};
 }
-#endif
