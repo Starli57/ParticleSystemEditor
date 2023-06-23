@@ -21,20 +21,14 @@ namespace ParticleSystemEditor
 
 	void Particle::SetupSettings(ParticleSettings* settings) 
 	{
-		//todo: replaced random logic to a separated class
-		std::random_device rd;
-		std::mt19937 gen(rd());
-		float min = -1.0f;
-		float max =  1.0f;
-		std::uniform_real_distribution<float> dist(min, max);
-		float randomNum = dist(gen);
-		//end
-
+		Random rand = Random();
 		_particleSettings = settings;
 
-		float positionOffset = settings->startPositionSpawnRadius * randomNum;
+		float positionOffset = settings->startPositionSpawnRadius * rand.Get(-1, 1);
 		_position = settings->startPosition + glm::vec3(positionOffset, positionOffset, positionOffset);
-		_velocity = settings->startVelocity;
+
+		float velocityDiff = settings->startVelocityDifference * rand.Get(-1, 1);
+		_velocity = settings->startVelocity + glm::vec3(velocityDiff, velocityDiff, velocityDiff);
 	}
 
 	void Particle::Update() 

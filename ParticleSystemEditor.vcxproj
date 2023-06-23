@@ -141,6 +141,7 @@
     <ClCompile Include="libs\glad\src\glad.c" />
     <ClCompile Include="Logger.cpp" />
     <ClCompile Include="LogConsole.cpp" />
+    <ClCompile Include="Random.cpp" />
     <ClCompile Include="ReactValue.cpp" />
     <ClCompile Include="Shader.cpp" />
     <ClCompile Include="main.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="Logger.h" />
     <ClInclude Include="LogConsole.h" />
     <ClInclude Include="Mesh.h" />
+    <ClInclude Include="Random.h" />
     <ClInclude Include="ReactValue.h" />
     <ClInclude Include="Shader.h" />
     <ClInclude Include="ShadersList.h" />

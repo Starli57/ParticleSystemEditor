@@ -55,6 +55,9 @@
     <Filter Include="Code\Editor\Time">
       <UniqueIdentifier>{afc2b38b-0b84-48c0-9aee-7318e1dad085}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Utility\Random">
+      <UniqueIdentifier>{e453d480-db08-4470-96af-42d0221cb11f}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -111,6 +114,9 @@
     </ClCompile>
     <ClCompile Include="ParticleSettings.cpp">
       <Filter>Code\ParticleSystem</Filter>
+    </ClCompile>
+    <ClCompile Include="Random.cpp">
+      <Filter>Code\Utility\Random</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -182,6 +188,9 @@
     </ClInclude>
     <ClInclude Include="ParticleSettings.h">
       <Filter>Code\ParticleSystem</Filter>
+    </ClInclude>
+    <ClInclude Include="Random.h">
+      <Filter>Code\Utility\Random</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

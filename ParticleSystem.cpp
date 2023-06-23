@@ -11,7 +11,7 @@ namespace ParticleSystemEditor
 		settings->startPositionSpawnRadius = 1;
 
 		settings->startVelocity = glm::vec3(0, 0.02f, 0);
-		settings->startVelocityDifference = 1;
+		settings->startVelocityDifference = 0.01f;
 
 		settings->startLifetime = 1;
 		settings->startLifetimeDifference = 1;
