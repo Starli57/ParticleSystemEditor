@@ -34,5 +34,8 @@ namespace ParticleSystemEditor
 
 		void Update();
 		void Render();
+
+	private:
+		void Emit();
 	};
 }

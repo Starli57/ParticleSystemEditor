@@ -14,6 +14,7 @@
 #include "Triangle.h"
 
 #include "Random.h"
+#include "Time.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -28,10 +29,14 @@ namespace ParticleSystemEditor
 		Particle(ParticleSettings* particleSettings);
 		~Particle();
 
-		void SetupSettings(ParticleSettings* particleSettings);
+		void Setup();
+		void Activate();
+		void Deactivate();
 
 		void Update();
 		void Render();
+
+		bool GetIsVisible();
 
 	private:
 		ParticleSettings* _particleSettings;
@@ -40,8 +45,8 @@ namespace ParticleSystemEditor
 		glm::vec3 _position;
 		glm::vec3 _velocity;
 		float _lifetime;
+		float _lifetimeLimit;
 
-		bool GetIsVisible();
 
 		void SetupProjectionMatrix();
 
