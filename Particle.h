@@ -14,6 +14,7 @@
 
 #include "Random.h"
 #include "Time.h"
+#include "Math.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -39,11 +40,13 @@ namespace ParticleSystemEditor
 		float GetLifetimeAspect();
 
 	private:
-		ParticleSettings* _particleSettings;
+
+		ParticleSettings* _settings;
 		Graphics::Shader* _shader;
 
 		glm::vec3 _position;
 		glm::vec3 _velocity;
+
 		float _lifetime;
 		float _lifetimeLimit;
 

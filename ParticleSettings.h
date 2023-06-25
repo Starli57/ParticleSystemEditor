@@ -7,13 +7,14 @@ struct ParticleSettings
 	glm::vec4 startColor;
 	glm::vec4 endColor;
 
-	glm::vec3 startPosition;
-	float startPositionSpawnRadius;
+	glm::vec3 emissionPosition;
+	float emissionRadius;
 
-	glm::vec3 startVelocity;
-	float startVelocityDifference;
+	glm::vec3 direction;
+	float minVelocity;
+	float maxVelocity;
 
-	float startLifetime;
-	float startLifetimeDifference;
+	float minLifetime;
+	float maxLifetime;
 };
 

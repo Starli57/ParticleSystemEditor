@@ -11,13 +11,20 @@ namespace ParticleSystemEditor
 	{
         ImGui::Begin("Inspector");
 
-        ImGui::DragFloat3("Position", glm::value_ptr(_settings->startPosition), 0.1f);
-        ImGui::DragFloat3("Velocity", glm::value_ptr(_settings->startVelocity), 0.001f);
+        ImGui::SeparatorText("Emission");
+        ImGui::DragFloat3("Position", glm::value_ptr(_settings->emissionPosition), 0.1f);
+        ImGui::DragFloat("Radius", &_settings->emissionRadius, 0.01f, 0, ImGuiSliderFlags_AlwaysClamp);
 
+        ImGui::SeparatorText("Force");
+        ImGui::DragFloat3("Direction", glm::value_ptr(_settings->direction), 0.001f, -1, 1);
+        ImGui::DragFloatRange2("Velocity", &_settings->minVelocity, &_settings->maxVelocity, 0.01f, 0.0f, 120, "Min: %.2f", "Max: %.2f", ImGuiSliderFlags_AlwaysClamp);
+
+        ImGui::SeparatorText("Color");
         ImGui::ColorEdit4("Start Color", glm::value_ptr(_settings->startColor));
         ImGui::ColorEdit4("End Color", glm::value_ptr(_settings->endColor));
 
-        ImGui::DragFloat("Lifetime", &_settings->startLifetime, 0.01f, 0, 120);
+        ImGui::SeparatorText("Lifetime");
+        ImGui::DragFloatRange2("Lifetime", &_settings->minLifetime, &_settings->maxLifetime, 0.01f, 0.0f, 120, "Min: %.2f", "Max: %.2f", ImGuiSliderFlags_AlwaysClamp);
 
         ImGui::End();
 	}

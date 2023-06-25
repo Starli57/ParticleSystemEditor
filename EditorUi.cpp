@@ -17,13 +17,8 @@ namespace ParticleSystemEditor
 
     void EditorUi::Render()
     {
-        ImGui_ImplOpenGL3_NewFrame();
-        ImGui_ImplGlfw_NewFrame();
-        ImGui::NewFrame();
-
         logConsole->Render();
         inspector->Render();
 
-        ImGui::Render();
     }
 }

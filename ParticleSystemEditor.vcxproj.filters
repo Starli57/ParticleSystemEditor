@@ -61,6 +61,15 @@
     <Filter Include="Code\Editor\Gui\Windows\Inspector">
       <UniqueIdentifier>{5bee808b-c15b-49c0-af53-31a924b50f71}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\ParticleSystem\Particle">
+      <UniqueIdentifier>{15ff7536-7755-4b46-813c-6ed8e6e65a22}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Utility\Math">
+      <UniqueIdentifier>{7a039c8b-a8bb-48e6-90f5-690dadd02a41}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Application">
+      <UniqueIdentifier>{a9f4c60c-beb1-49ed-a1db-779c2780cb60}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -97,9 +106,6 @@
     <ClCompile Include="di.cpp">
       <Filter>Code\Utility\DI</Filter>
     </ClCompile>
-    <ClCompile Include="Particle.cpp">
-      <Filter>Code\ParticleSystem</Filter>
-    </ClCompile>
     <ClCompile Include="ParticleSystem.cpp">
       <Filter>Code\ParticleSystem</Filter>
     </ClCompile>
@@ -115,14 +121,32 @@
     <ClCompile Include="Time.cpp">
       <Filter>Code\Editor\Time</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleSettings.cpp">
-      <Filter>Code\ParticleSystem</Filter>
-    </ClCompile>
     <ClCompile Include="Random.cpp">
       <Filter>Code\Utility\Random</Filter>
     </ClCompile>
     <ClCompile Include="Inspector.cpp">
       <Filter>Code\Editor\Gui\Windows\Inspector</Filter>
+    </ClCompile>
+    <ClCompile Include="Particle.cpp">
+      <Filter>Code\ParticleSystem\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="ParticleSettings.cpp">
+      <Filter>Code\ParticleSystem\Particle</Filter>
+    </ClCompile>
+    <ClCompile Include="Math.cpp">
+      <Filter>Code\Utility\Math</Filter>
+    </ClCompile>
+    <ClCompile Include="Application.cpp">
+      <Filter>Code\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneContext.cpp">
+      <Filter>Code\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="IContext.h">
+      <Filter>Code\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="UiContext.cpp">
+      <Filter>Code\Application</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -171,9 +195,6 @@
     <ClInclude Include="di.h">
       <Filter>Code\Utility\DI</Filter>
     </ClInclude>
-    <ClInclude Include="Particle.h">
-      <Filter>Code\ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="ParticleSystem.h">
       <Filter>Code\ParticleSystem</Filter>
     </ClInclude>
@@ -192,14 +213,29 @@
     <ClInclude Include="Time.h">
       <Filter>Code\Editor\Time</Filter>
     </ClInclude>
-    <ClInclude Include="ParticleSettings.h">
-      <Filter>Code\ParticleSystem</Filter>
-    </ClInclude>
     <ClInclude Include="Random.h">
       <Filter>Code\Utility\Random</Filter>
     </ClInclude>
     <ClInclude Include="Inspector.h">
       <Filter>Code\Editor\Gui\Windows\Inspector</Filter>
+    </ClInclude>
+    <ClInclude Include="Particle.h">
+      <Filter>Code\ParticleSystem\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="ParticleSettings.h">
+      <Filter>Code\ParticleSystem\Particle</Filter>
+    </ClInclude>
+    <ClInclude Include="Math.h">
+      <Filter>Code\Utility\Math</Filter>
+    </ClInclude>
+    <ClInclude Include="Application.h">
+      <Filter>Code\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneContext.h">
+      <Filter>Code\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="UiContext.h">
+      <Filter>Code\Application</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -209,5 +245,8 @@
     <None Include="default.frag">
       <Filter>Shaders</Filter>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="todo.txt" />
   </ItemGroup>
 </Project>

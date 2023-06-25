@@ -11,14 +11,15 @@ namespace ParticleSystemEditor
 	{
 		settings = new ParticleSettings();
 
-		settings->startPosition = glm::vec3(0, -1, -3);
-		settings->startPositionSpawnRadius = 0.1f;
+		settings->emissionPosition = glm::vec3(0, -1, -3);
+		settings->emissionRadius = 0.1f;
 
-		settings->startVelocity = glm::vec3(0, 0.02f, 0);
-		settings->startVelocityDifference = 0.01f;
+		settings->direction = glm::vec3(0, 0.02f, 0);
+		settings->minVelocity = 1;
+		settings->maxVelocity = 2;
 
-		settings->startLifetime = 1;
-		settings->startLifetimeDifference = 0.2f;
+		settings->minLifetime = 1;
+		settings->maxLifetime = 2;
 
 		settings->startColor = glm::vec4(1.0f, 0.5f, 0.2f, 1.0f);
 		settings->endColor = glm::vec4(0.5f, 0.2f, 0.275f, 0);

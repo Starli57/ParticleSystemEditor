@@ -133,9 +133,13 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Application.cpp" />
     <ClCompile Include="Di.cpp" />
     <ClCompile Include="EditorUi.cpp" />
+    <ClCompile Include="IContext.h" />
+    <ClCompile Include="SceneContext.cpp" />
     <ClCompile Include="Inspector.cpp" />
+    <ClCompile Include="Math.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleSettings.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
@@ -154,10 +158,14 @@
     <ClCompile Include="libs\imgui\imgui_tables.cpp" />
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Time.cpp" />
+    <ClCompile Include="UiContext.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Application.h" />
     <ClInclude Include="Di.h" />
+    <ClInclude Include="SceneContext.h" />
     <ClInclude Include="Inspector.h" />
+    <ClInclude Include="Math.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleSettings.h" />
     <ClInclude Include="ParticleSystem.h" />
@@ -180,11 +188,15 @@
     <ClInclude Include="ShadersList.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Triangle.h" />
+    <ClInclude Include="UiContext.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Default.vert" />
     <None Include="Default.frag" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="todo.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

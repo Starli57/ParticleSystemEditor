@@ -8,7 +8,7 @@ namespace ParticleSystemEditor
 
 	Particle::Particle(ParticleSettings* settings)
 	{
-		_particleSettings = settings;
+		_settings = settings;
 
 		Setup();
 		Deactivate();
@@ -38,13 +38,10 @@ namespace ParticleSystemEditor
 	{
 		Random rand = Random();
 
-		float positionOffset = _particleSettings->startPositionSpawnRadius * rand.Get(-1, 1);
-		_position = _particleSettings->startPosition + glm::vec3(positionOffset, positionOffset, positionOffset);
-
-		float velocityDiff = _particleSettings->startVelocityDifference * rand.Get(-1, 1);
-		_velocity = _particleSettings->startVelocity + glm::vec3(velocityDiff, velocityDiff, velocityDiff);
-
-		_lifetimeLimit = _particleSettings->startLifetime + _particleSettings->startLifetimeDifference * rand.Get(-1, 1);
+		float positionOffset = _settings->emissionRadius * rand.Get(-1, 1);
+		_position = _settings->emissionPosition + glm::vec3(positionOffset, positionOffset, positionOffset);
+		_velocity = _settings->direction * Math::Lerp(_settings->minVelocity, _settings->maxVelocity, rand.Get(0, 1));
+		_lifetimeLimit = Math::Lerp(_settings->minLifetime, _settings->maxLifetime, rand.Get(0, 1));
 	}
 
 	void Particle::Update()
@@ -109,8 +106,7 @@ namespace ParticleSystemEditor
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0, 0, 0));
 
-		glm::vec4 color = _particleSettings->startColor + 
-			(_particleSettings->endColor - _particleSettings->startColor) * GetLifetimeAspect();
+		glm::vec4 color = Math::Lerp(_settings->startColor, _settings->endColor, GetLifetimeAspect());
 
 		_shader->setMat4("view", view);
 		_shader->setMat4("model", model);
