@@ -4,6 +4,7 @@
 #include <GLFW/glfw3.h>
 #include <iostream>
 #include <random>
+#include <vector>
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>
@@ -11,23 +12,16 @@
 
 #include "LogConsole.h"
 
-#include "ParticleSystem.h"
-
-#include "Shader.h"
-#include "ShadersList.h"
-
-#include "Vertex.h"
-#include "Triangle.h"
 #include "Particle.h"
 
 namespace ParticleSystemEditor
 {
-	class Particle;
-
 	class ParticleSystem 
 	{
 	public:
 		std::vector<Particle*>* particles;
+
+		ParticleSettings* GetParticleSettingsPtr();
 
 		ParticleSystem();
 		~ParticleSystem();
@@ -36,6 +30,8 @@ namespace ParticleSystemEditor
 		void Render();
 
 	private:
+		ParticleSettings* settings;
+
 		void Emit();
 	};
 }

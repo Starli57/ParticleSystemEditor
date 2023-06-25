@@ -5,6 +5,7 @@
 #include "imgui_impl_opengl3.h"
 
 #include "LogConsole.h"
+#include "Inspector.h";
 
 namespace ParticleSystemEditor
 {
@@ -12,9 +13,10 @@ namespace ParticleSystemEditor
 	{
 	public:
 		
-		LogConsole *logConsole;
+		LogConsole* logConsole;
+		Inspector* inspector;
 
-		EditorUi();
+		EditorUi(ParticleSettings* settings);
 		~EditorUi();
 
 		void Render();

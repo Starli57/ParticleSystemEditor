@@ -59,15 +59,13 @@ int WinMain()
         glfwTerminate();
         return 1;
     }
-
+    
     glfwMakeContextCurrent(window);
     gladLoadGL();
+    glfwSwapInterval(1);
 
     std::unique_ptr<ParticleSystemEditor::ParticleSystem> particleSystem = std::make_unique<ParticleSystemEditor::ParticleSystem>();
-    std::unique_ptr<ParticleSystemEditor::EditorUi> editorUi = std::make_unique<ParticleSystemEditor::EditorUi>();
-
-    glfwMakeContextCurrent(window);
-    glfwSwapInterval(1); // Enable vsync
+    ParticleSystemEditor::EditorUi* editorUi = new ParticleSystemEditor::EditorUi(particleSystem->GetParticleSettingsPtr());
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -78,9 +76,10 @@ int WinMain()
     io.ConfigFlags |= ImGuiConfigFlags_DockingEnable;         // Enable Docking
     io.ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
     io.ConfigViewportsNoAutoMerge = true;
+
     //io.ConfigViewportsNoTaskBarIcon = true;
 
-    ImGui::StyleColorsLight();
+    ImGui::StyleColorsDark();
 
     ImGuiStyle& style = ImGui::GetStyle();
     if (io.ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
@@ -134,6 +133,8 @@ int WinMain()
 
     glfwDestroyWindow(window);
     glfwTerminate();
+
+    delete editorUi;
 
     return 0;
 }

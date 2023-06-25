@@ -135,6 +135,7 @@
   <ItemGroup>
     <ClCompile Include="Di.cpp" />
     <ClCompile Include="EditorUi.cpp" />
+    <ClCompile Include="Inspector.cpp" />
     <ClCompile Include="Particle.cpp" />
     <ClCompile Include="ParticleSettings.cpp" />
     <ClCompile Include="ParticleSystem.cpp" />
@@ -156,6 +157,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Di.h" />
+    <ClInclude Include="Inspector.h" />
     <ClInclude Include="Particle.h" />
     <ClInclude Include="ParticleSettings.h" />
     <ClInclude Include="ParticleSystem.h" />

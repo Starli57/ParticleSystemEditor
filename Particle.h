@@ -5,7 +5,6 @@
 
 #include "LogConsole.h"
 
-#include "ParticleSystem.h"
 #include "ParticleSettings.h"
 #include "Shader.h"
 #include "ShadersList.h"
@@ -37,6 +36,7 @@ namespace ParticleSystemEditor
 		void Render();
 
 		bool GetIsVisible();
+		float GetLifetimeAspect();
 
 	private:
 		ParticleSettings* _particleSettings;

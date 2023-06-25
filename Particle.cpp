@@ -72,12 +72,12 @@ namespace ParticleSystemEditor
 
 		float vertexes[] =
 		{
-			//   positions
-			//   x      y      z
-				-0.5f, -0.5f,  0,
-				-0.5f,  0.5f,  0,
-				 0.5f,  0.5f,  0,
-				 0.5f, -0.5f,  0
+		//   positions
+		//   x      y      z
+			-0.5f, -0.5f,  0,
+			-0.5f,  0.5f,  0,
+			 0.5f,  0.5f,  0,
+			 0.5f, -0.5f,  0
 		};
 
 		uint32_t indices[] = {
@@ -103,18 +103,18 @@ namespace ParticleSystemEditor
 
 		// create transformations
 		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
-
 		view = glm::translate(view, _position);
 		view = glm::rotate(view, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
 
-		// pass transformation matrices to the shader
-		_shader->setMat4("view", view);
-
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0, 0, 0));
-		float angle = 10;
-		model = glm::rotate(model, glm::radians(angle), glm::vec3(1.0f, 0.3f, 0.5f));
+
+		glm::vec4 color = _particleSettings->startColor + 
+			(_particleSettings->endColor - _particleSettings->startColor) * GetLifetimeAspect();
+
+		_shader->setMat4("view", view);
 		_shader->setMat4("model", model);
+		_shader->setVec4("inColor", color);
 
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
@@ -129,7 +129,6 @@ namespace ParticleSystemEditor
 
 	void Particle::SetupProjectionMatrix()
 	{
-		
 		float widthHeightAspect = 1;//todo: calculate real aspect
 
 		glm::mat4 projection = glm::mat4(1.0f);
@@ -140,5 +139,10 @@ namespace ParticleSystemEditor
 	bool Particle::GetIsVisible()
 	{
 		return _lifetime <= _lifetimeLimit;
+	}
+
+	float Particle::GetLifetimeAspect()
+	{
+		return _lifetime / _lifetimeLimit;
 	}
 }

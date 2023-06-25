@@ -58,6 +58,9 @@
     <Filter Include="Code\Utility\Random">
       <UniqueIdentifier>{e453d480-db08-4470-96af-42d0221cb11f}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Editor\Gui\Windows\Inspector">
+      <UniqueIdentifier>{5bee808b-c15b-49c0-af53-31a924b50f71}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -117,6 +120,9 @@
     </ClCompile>
     <ClCompile Include="Random.cpp">
       <Filter>Code\Utility\Random</Filter>
+    </ClCompile>
+    <ClCompile Include="Inspector.cpp">
+      <Filter>Code\Editor\Gui\Windows\Inspector</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -191,6 +197,9 @@
     </ClInclude>
     <ClInclude Include="Random.h">
       <Filter>Code\Utility\Random</Filter>
+    </ClInclude>
+    <ClInclude Include="Inspector.h">
+      <Filter>Code\Editor\Gui\Windows\Inspector</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

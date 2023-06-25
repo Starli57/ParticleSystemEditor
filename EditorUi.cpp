@@ -4,9 +4,10 @@
 
 namespace ParticleSystemEditor
 {
-    EditorUi::EditorUi() 
+    EditorUi::EditorUi(ParticleSettings* settings)
     {
         logConsole = new LogConsole();
+        inspector = new Inspector(settings);
     }
 
     EditorUi::~EditorUi() 
@@ -21,6 +22,7 @@ namespace ParticleSystemEditor
         ImGui::NewFrame();
 
         logConsole->Render();
+        inspector->Render();
 
         ImGui::Render();
     }

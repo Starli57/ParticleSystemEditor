@@ -1,8 +1,12 @@
 #pragma once
 #include <glm/vec3.hpp>
+#include <glm/vec4.hpp>
 
 struct ParticleSettings
 {
+	glm::vec4 startColor;
+	glm::vec4 endColor;
+
 	glm::vec3 startPosition;
 	float startPositionSpawnRadius;
 
