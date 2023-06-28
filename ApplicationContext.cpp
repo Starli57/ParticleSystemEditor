@@ -8,8 +8,8 @@ ApplicationContext::ApplicationContext()
     time = std::make_shared<Time>();
     Utilities::DI::Register(time);
 
-    particleSystem = std::make_unique<ParticleSystem>();
-    editorUi = std::make_unique<EditorUi>(particleSystem->GetParticleSettingsPtr());
+    particleSystem = std::make_shared<ParticleSystem>();
+    Utilities::DI::Register(particleSystem);
 }
 
 ApplicationContext::~ApplicationContext()
@@ -23,12 +23,7 @@ void ApplicationContext::Update()
     particleSystem->Update();
 }
 
-void ApplicationContext::UpdateGlfw()
+void ApplicationContext::Render()
 {
     particleSystem->Render();
-}
-
-void ApplicationContext::UpdateImgui()
-{
-    editorUi->Render();
 }

@@ -12,6 +12,7 @@
 #include "GlfwContext.h"
 #include "ImguiContext.h"
 #include "ApplicationContext.h"
+#include "EditorContext.h"
 
 #include "EditorUi.h"
 #include "ParticleSystem.h"

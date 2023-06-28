@@ -148,6 +148,9 @@
     <ClCompile Include="ApplicationContext.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
+    <ClCompile Include="EditorContext.cpp">
+      <Filter>Code\Application</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\imgui\imconfig.h">
@@ -238,6 +241,9 @@
       <Filter>Code\Application</Filter>
     </ClInclude>
     <ClInclude Include="ApplicationContext.h">
+      <Filter>Code\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="EditorContext.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
   </ItemGroup>

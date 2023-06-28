@@ -23,11 +23,9 @@ public:
 	~ApplicationContext();
 
 	void Update();
-	void UpdateGlfw();
-	void UpdateImgui();
+	void Render();
 
 private:
-	std::unique_ptr<ParticleSystem> particleSystem;
-	std::unique_ptr<EditorUi> editorUi;
+	std::shared_ptr<ParticleSystem> particleSystem;
 };
 
