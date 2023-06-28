@@ -9,8 +9,9 @@
 #include <chrono>
 #include <ctime>   
 
-#include "SceneContext.h"
-#include "UiContext.h"
+#include "GlfwContext.h"
+#include "ImguiContext.h"
+#include "ApplicationContext.h"
 
 #include "EditorUi.h"
 #include "ParticleSystem.h"

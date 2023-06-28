@@ -1,7 +1,7 @@
 
-#include "UiContext.h"
+#include "ImguiContext.h"
 
-UiContext::UiContext()
+ImguiContext::ImguiContext(GLFWwindow* window, std::string glslVersion)
 {
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -14,16 +14,20 @@ UiContext::UiContext()
     _io->ConfigViewportsNoAutoMerge = true;
 
     ImGui::StyleColorsDark();
+
+    // Setup Platform/Renderer backends
+    ImGui_ImplGlfw_InitForOpenGL(window, true);
+    ImGui_ImplOpenGL3_Init(glslVersion.c_str());
 }
 
-UiContext::~UiContext()
+ImguiContext::~ImguiContext()
 {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 }
 
-void UiContext::Prepare()
+void ImguiContext::Prepare()
 {
     ImGui_ImplOpenGL3_NewFrame();
     ImGui_ImplGlfw_NewFrame();
@@ -31,12 +35,12 @@ void UiContext::Prepare()
     ImGui::NewFrame();
 }
 
-void UiContext::Render()
+void ImguiContext::Render()
 {
     ImGui::Render();
 }
 
-ImGuiIO* UiContext::GetImguiIo()
+ImGuiIO* ImguiContext::GetImguiIo()
 {
     return _io;
 }

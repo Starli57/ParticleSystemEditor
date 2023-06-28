@@ -139,10 +139,13 @@
     <ClCompile Include="Application.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="SceneContext.cpp">
+    <ClCompile Include="GlfwContext.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="UiContext.cpp">
+    <ClCompile Include="ImguiContext.cpp">
+      <Filter>Code\Application</Filter>
+    </ClCompile>
+    <ClCompile Include="ApplicationContext.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
   </ItemGroup>
@@ -228,10 +231,13 @@
     <ClInclude Include="Application.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="SceneContext.h">
+    <ClInclude Include="GlfwContext.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="UiContext.h">
+    <ClInclude Include="ImguiContext.h">
+      <Filter>Code\Application</Filter>
+    </ClInclude>
+    <ClInclude Include="ApplicationContext.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
   </ItemGroup>

@@ -11,14 +11,14 @@
 #include "Di.h"
 #include "Logger.h"
 
-class SceneContext
+class GlfwContext
 {
 public:
 
-	SceneContext();
-	~SceneContext();
+	GlfwContext();
+	~GlfwContext();
 	void Prepare();
-	void Finalize();
+	void Finalize(ImGuiConfigFlags flags);
 
 	GLFWwindow* GetWindow();
 	std::string GetGlslVersion();

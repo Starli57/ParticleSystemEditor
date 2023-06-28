@@ -4,11 +4,13 @@
 #include "imgui_impl_glfw.h"
 #include "imgui_impl_opengl3.h"
 
-class UiContext
+#include <string>
+
+class ImguiContext
 {
 public:
-	UiContext();
-	~UiContext();
+	ImguiContext(GLFWwindow* window, std::string glslVersion);
+	~ImguiContext();
 	void Prepare();
 	void Render();
 

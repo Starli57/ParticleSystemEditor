@@ -1,4 +1,5 @@
 *Code design
+**Make independent editor and project contexts
 
 *Optimization
 **Use linked lists to find not active particles

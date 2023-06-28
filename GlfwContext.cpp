@@ -1,4 +1,4 @@
-#include "SceneContext.h"
+#include "GlfwContext.h"
 
 #define MLogger Utilities::DI::Get<Logging::Logger>()
 
@@ -7,7 +7,7 @@ void glfw_error_callback(int error, const char* description)
     MLogger->Log("GLFW Error description: " + std::string(description));
 }
 
-SceneContext::SceneContext()
+GlfwContext::GlfwContext()
 {
     glfwSetErrorCallback(glfw_error_callback);
     glfwInit();
@@ -29,13 +29,13 @@ SceneContext::SceneContext()
     gladLoadGL();
 }
 
-SceneContext::~SceneContext()
+GlfwContext::~GlfwContext()
 {
     glfwDestroyWindow(GetWindow());
     glfwTerminate();
 }
 
-void SceneContext::Prepare()
+void GlfwContext::Prepare()
 {
     ImVec4 clear_color = ImVec4(0.075f, 0.15f, 0.2f, 1.00f);
     int display_w, display_h;
@@ -46,17 +46,25 @@ void SceneContext::Prepare()
     ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void SceneContext::Finalize()
+void GlfwContext::Finalize(ImGuiConfigFlags flags)
 {
     glfwSwapBuffers(GetWindow());
+
+    if (flags & ImGuiConfigFlags_ViewportsEnable)
+    {
+        GLFWwindow* backup_current_context = glfwGetCurrentContext();
+        ImGui::UpdatePlatformWindows();
+        ImGui::RenderPlatformWindowsDefault();
+        glfwMakeContextCurrent(backup_current_context);
+    }
 }
 
-GLFWwindow* SceneContext::GetWindow()
+GLFWwindow* GlfwContext::GetWindow()
 {
     return _window;
 }
 
-std::string SceneContext::GetGlslVersion()
+std::string GlfwContext::GetGlslVersion()
 {
 #if defined(__APPLE__)
     // GL 3.2 + GLSL 150

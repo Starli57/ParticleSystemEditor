@@ -6,47 +6,26 @@ using namespace ParticleSystemEditor;
 
 Application::Application()
 {
-    std::unique_ptr<SceneContext> sceneContext = std::make_unique<SceneContext>();
-    std::unique_ptr<UiContext> uiContext = std::make_unique<UiContext>();
+    std::unique_ptr<GlfwContext> glfwContext = std::make_unique<GlfwContext>();
+    std::unique_ptr<ImguiContext> imguiContext = std::make_unique<ImguiContext>(glfwContext->GetWindow(), glfwContext->GetGlslVersion());
+    std::unique_ptr<ApplicationContext> appContext = std::make_unique<ApplicationContext>();
 
-    std::shared_ptr<Logging::Logger> logger = std::make_shared<Logging::Logger>();
-    Utilities::DI::Register(logger);
-
-    std::shared_ptr<Time> time = std::make_shared<Time>();
-    Utilities::DI::Register(time);
-
-    std::unique_ptr<ParticleSystem> particleSystem = std::make_unique<ParticleSystem>();
-    std::unique_ptr <EditorUi> editorUi = std::make_unique<EditorUi>(particleSystem->GetParticleSettingsPtr());
-
-    // Setup Platform/Renderer backends
-    ImGui_ImplGlfw_InitForOpenGL(sceneContext->GetWindow(), true);
-    ImGui_ImplOpenGL3_Init(sceneContext->GetGlslVersion().c_str());
-
-    while (!glfwWindowShouldClose(sceneContext->GetWindow()))
+    while (!glfwWindowShouldClose(glfwContext->GetWindow()))
     {
         glfwPollEvents();
 
-        time->Update();
-        particleSystem->Update();
+        appContext->Update();
 
-        uiContext->Prepare();
-        editorUi->Render();
-        uiContext->Render();
+        imguiContext->Prepare();
+        appContext->UpdateImgui();
+        imguiContext->Render();
 
-        sceneContext->Prepare();
-        particleSystem->Render();
-        sceneContext->Finalize();
-
-        if (uiContext->GetImguiIo()->ConfigFlags & ImGuiConfigFlags_ViewportsEnable)
-        {
-            GLFWwindow* backup_current_context = glfwGetCurrentContext();
-            ImGui::UpdatePlatformWindows();
-            ImGui::RenderPlatformWindowsDefault();
-            glfwMakeContextCurrent(backup_current_context);
-        }
+        glfwContext->Prepare();
+        appContext->UpdateGlfw();
+        glfwContext->Finalize(imguiContext->GetImguiIo()->ConfigFlags);
 
         std::stringstream msg;
-        msg << "Frames: " << (int)(1/time->GetDeltaTime());
+        msg << "Frames: " << (int)(1 / appContext->time->GetDeltaTime());
         MLogger->Log(msg.str());
     }
 }
