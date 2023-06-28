@@ -9,6 +9,7 @@
 **Ability to setup different directions\angles
 **Gravity
 **Particles Physics
+**Rotation parameter
 
 *Log system
 **More messages in logs
@@ -17,6 +18,11 @@
 *Render
 **Fix objects transformations dependent on screen size
 **Add alpha for particles
+
+*Camera
+**Add camera entity
+**Move camera by mouse
+**Move camera by keyboard arrows
 
 *Other
 **Set target FPS

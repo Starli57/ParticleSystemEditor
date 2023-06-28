@@ -136,7 +136,6 @@
     <ClCompile Include="Application.cpp" />
     <ClCompile Include="Di.cpp" />
     <ClCompile Include="EditorUi.cpp" />
-    <ClCompile Include="IContext.h" />
     <ClCompile Include="SceneContext.cpp" />
     <ClCompile Include="Inspector.cpp" />
     <ClCompile Include="Math.cpp" />

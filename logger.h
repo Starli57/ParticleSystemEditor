@@ -11,7 +11,7 @@ namespace Logging
 	public:
 		std::string* messages;
 
-		Logger(const int maxMessagesCount = 10);
+		Logger(const int maxMessagesCount = 25);
 		~Logger();
 
 		void Log(const std::string& message);

@@ -7,15 +7,10 @@ void glfw_error_callback(int error, const char* description)
     MLogger->Log("GLFW Error description: " + std::string(description));
 }
 
-void SceneContext::Initialize()
+SceneContext::SceneContext()
 {
     glfwSetErrorCallback(glfw_error_callback);
-    int initialized = glfwInit();
-
-    if (!initialized)
-    {
-        return;
-    }
+    glfwInit();
 
 #if defined(__APPLE__)
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
@@ -28,45 +23,32 @@ void SceneContext::Initialize()
 #endif
 
     _window = glfwCreateWindow(800, 800, "Cards editor", nullptr, nullptr);
-    if (_window == nullptr)
-    {
-        glfwTerminate();
-        return;
-    }
 
     glfwMakeContextCurrent(_window);
     glfwSwapInterval(1);
     gladLoadGL();
 }
 
-void SceneContext::Finalize()
+SceneContext::~SceneContext()
 {
     glfwDestroyWindow(GetWindow());
     glfwTerminate();
 }
 
-void SceneContext::Update()
+void SceneContext::Prepare()
 {
+    ImVec4 clear_color = ImVec4(0.075f, 0.15f, 0.2f, 1.00f);
+    int display_w, display_h;
+    glfwGetFramebufferSize(GetWindow(), &display_w, &display_h);
+    glViewport(0, 0, display_w, display_h);
+    glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
+    glClear(GL_COLOR_BUFFER_BIT);
+    ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 }
 
-void SceneContext::BeforeRender()
+void SceneContext::Finalize()
 {
-}
-
-void SceneContext::Render()
-{
-}
-
-void SceneContext::AfterRender()
-{
-}
-
-void SceneContext::BeforeUpdate()
-{
-}
-
-void SceneContext::AfterUpdate()
-{
+    glfwSwapBuffers(GetWindow());
 }
 
 GLFWwindow* SceneContext::GetWindow()

@@ -142,9 +142,6 @@
     <ClCompile Include="SceneContext.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="IContext.h">
-      <Filter>Code\Application</Filter>
-    </ClCompile>
     <ClCompile Include="UiContext.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>

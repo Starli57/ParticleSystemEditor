@@ -1,7 +1,7 @@
 
 #include "UiContext.h"
 
-void UiContext::Initialize()
+UiContext::UiContext()
 {
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -14,40 +14,26 @@ void UiContext::Initialize()
     _io->ConfigViewportsNoAutoMerge = true;
 
     ImGui::StyleColorsDark();
-
-    ImGuiStyle& style = ImGui::GetStyle();
-
 }
 
-void UiContext::Finalize()
+UiContext::~UiContext()
 {
     ImGui_ImplOpenGL3_Shutdown();
     ImGui_ImplGlfw_Shutdown();
     ImGui::DestroyContext();
 }
 
-void UiContext::Update()
+void UiContext::Prepare()
 {
-}
+    ImGui_ImplOpenGL3_NewFrame();
+    ImGui_ImplGlfw_NewFrame();
 
-void UiContext::BeforeRender()
-{
+    ImGui::NewFrame();
 }
 
 void UiContext::Render()
 {
-}
-
-void UiContext::AfterRender()
-{
-}
-
-void UiContext::BeforeUpdate()
-{
-}
-
-void UiContext::AfterUpdate()
-{
+    ImGui::Render();
 }
 
 ImGuiIO* UiContext::GetImguiIo()

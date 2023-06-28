@@ -1,26 +1,24 @@
 #pragma once
 
+#include "imgui.h"
+#include "imgui_impl_glfw.h"
+#include "imgui_impl_opengl3.h"
+
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h> 
 #include <string>
 
-#include "IContext.h"
 #include "Di.h"
 #include "Logger.h"
 
-class SceneContext : public IContext
+class SceneContext
 {
 public:
 
-	// Inherited via IContext
-	virtual void Initialize() override;
-	virtual void Finalize() override;
-	virtual void Update() override;
-	virtual void BeforeRender() override;
-	virtual void Render() override;
-	virtual void AfterRender() override;
-	virtual void BeforeUpdate() override;
-	virtual void AfterUpdate() override;
+	SceneContext();
+	~SceneContext();
+	void Prepare();
+	void Finalize();
 
 	GLFWwindow* GetWindow();
 	std::string GetGlslVersion();
