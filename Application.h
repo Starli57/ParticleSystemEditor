@@ -1,31 +1,17 @@
 #pragma once
 
-#include "imgui.h"
-#include "imgui_impl_glfw.h"
-#include "imgui_impl_opengl3.h"
-
-#include <iostream>
-#include <stdio.h>
-#include <chrono>
-#include <ctime>   
-
-#include "GlfwContext.h"
-#include "ImguiContext.h"
-#include "ApplicationContext.h"
-#include "EditorContext.h"
-
-#include "EditorUi.h"
-#include "ParticleSystem.h"
-#include "Di.h"
-#include "Logger.h"
-#include "Time.h"
-
-#include <GLFW/glfw3.h> 
-
+#include "Scene.h"
+#include "Editor.h"
 
 class Application
 {
 public:
-	Application();
-};
+    std::unique_ptr<Scene> scene;
+    std::unique_ptr<Editor> editor;
 
+    void Start();
+    void Dispose();
+    void Update();
+    void RenderScene();
+    void RenderUi();
+};

@@ -13,14 +13,14 @@
 using namespace ParticleSystemEditor;
 using namespace Logging;
 
-class ApplicationContext
+class Scene
 {
 public:
 	std::shared_ptr<Logger> logger;
 	std::shared_ptr<Time> time;
 
-	ApplicationContext();
-	~ApplicationContext();
+	Scene();
+	~Scene();
 
 	void Update();
 	void Render();

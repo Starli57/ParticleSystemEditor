@@ -134,11 +134,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Application.cpp" />
-    <ClCompile Include="ApplicationContext.cpp" />
+    <ClCompile Include="AppRuntime.cpp" />
+    <ClCompile Include="Scene.cpp" />
     <ClCompile Include="Di.cpp" />
-    <ClCompile Include="EditorContext.cpp" />
+    <ClCompile Include="Editor.cpp" />
     <ClCompile Include="EditorUi.cpp" />
-    <ClCompile Include="GlfwContext.cpp" />
     <ClCompile Include="Inspector.cpp" />
     <ClCompile Include="Math.cpp" />
     <ClCompile Include="Particle.cpp" />
@@ -159,14 +159,13 @@
     <ClCompile Include="libs\imgui\imgui_tables.cpp" />
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="Time.cpp" />
-    <ClCompile Include="ImguiContext.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Application.h" />
-    <ClInclude Include="ApplicationContext.h" />
+    <ClInclude Include="Scene.h" />
+    <ClInclude Include="AppRuntime.h" />
     <ClInclude Include="Di.h" />
-    <ClInclude Include="EditorContext.h" />
-    <ClInclude Include="GlfwContext.h" />
+    <ClInclude Include="Editor.h" />
     <ClInclude Include="Inspector.h" />
     <ClInclude Include="Math.h" />
     <ClInclude Include="Particle.h" />
@@ -191,7 +190,6 @@
     <ClInclude Include="ShadersList.h" />
     <ClInclude Include="Time.h" />
     <ClInclude Include="Triangle.h" />
-    <ClInclude Include="ImguiContext.h" />
     <ClInclude Include="Vertex.h" />
   </ItemGroup>
   <ItemGroup>

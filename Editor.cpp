@@ -1,22 +1,22 @@
-#include "EditorContext.h"
+#include "Editor.h"
 
-EditorContext::EditorContext()
+Editor::Editor()
 {
 	std::shared_ptr<ParticleSystem> particleSystem = Utilities::DI::Get<ParticleSystem>();
 	editorUi = std::make_unique<EditorUi>(particleSystem->GetParticleSettingsPtr());
 }
 
-EditorContext::~EditorContext()
+Editor::~Editor()
 {
 
 }
 
-void EditorContext::Update()
+void Editor::Update()
 {
 
 }
 
-void EditorContext::Render()
+void Editor::Render()
 {
 	editorUi->Render();
 }

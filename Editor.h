@@ -7,11 +7,11 @@
 
 using namespace ParticleSystemEditor;
 
-class EditorContext
+class Editor
 {
 public:
-	EditorContext();
-	~EditorContext();
+	Editor();
+	~Editor();
 	
 	void Update();
 	void Render();

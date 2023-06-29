@@ -70,6 +70,9 @@
     <Filter Include="Code\Application">
       <UniqueIdentifier>{a9f4c60c-beb1-49ed-a1db-779c2780cb60}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Code\Application\Context">
+      <UniqueIdentifier>{374885ed-9b93-4cd6-9f88-7767184b425a}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="libs\imgui\imgui.cpp">
@@ -139,16 +142,13 @@
     <ClCompile Include="Application.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="GlfwContext.cpp">
+    <ClCompile Include="Scene.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="ImguiContext.cpp">
+    <ClCompile Include="Editor.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="ApplicationContext.cpp">
-      <Filter>Code\Application</Filter>
-    </ClCompile>
-    <ClCompile Include="EditorContext.cpp">
+    <ClCompile Include="AppRuntime.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
   </ItemGroup>
@@ -231,19 +231,16 @@
     <ClInclude Include="Math.h">
       <Filter>Code\Utility\Math</Filter>
     </ClInclude>
+    <ClInclude Include="AppRuntime.h">
+      <Filter>Code\Application</Filter>
+    </ClInclude>
     <ClInclude Include="Application.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="GlfwContext.h">
+    <ClInclude Include="Editor.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="ImguiContext.h">
-      <Filter>Code\Application</Filter>
-    </ClInclude>
-    <ClInclude Include="ApplicationContext.h">
-      <Filter>Code\Application</Filter>
-    </ClInclude>
-    <ClInclude Include="EditorContext.h">
+    <ClInclude Include="Scene.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
   </ItemGroup>

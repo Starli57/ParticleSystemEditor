@@ -1,10 +1,11 @@
 
 #include <iostream>
 
-#include "Application.h"
+#include "AppRuntime.h"
 
 int WinMain()
 {
-    std::unique_ptr<Application> app = std::make_unique<Application>();
+    std::unique_ptr<AppRuntime> appRuntime = std::make_unique<AppRuntime>();
+
     return 0;
 }

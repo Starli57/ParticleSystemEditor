@@ -1,6 +1,6 @@
-#include "ApplicationContext.h"
+#include "Scene.h"
 
-ApplicationContext::ApplicationContext()
+Scene::Scene()
 {
     logger = std::make_shared<Logging::Logger>();
     Utilities::DI::Register(logger);
@@ -12,18 +12,18 @@ ApplicationContext::ApplicationContext()
     Utilities::DI::Register(particleSystem);
 }
 
-ApplicationContext::~ApplicationContext()
+Scene::~Scene()
 {
 
 }
 
-void ApplicationContext::Update()
+void Scene::Update()
 {
     time->Update();
     particleSystem->Update();
 }
 
-void ApplicationContext::Render()
+void Scene::Render()
 {
     particleSystem->Render();
 }
