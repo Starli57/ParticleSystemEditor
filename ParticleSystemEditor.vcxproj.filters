@@ -16,23 +16,11 @@
     <Filter Include="Code">
       <UniqueIdentifier>{77d7eaf7-cc23-4f6b-abaa-d52cb9b42b11}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\Editor">
-      <UniqueIdentifier>{06c45505-cd84-44bd-a8f2-5fcefefc36af}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\Editor\Gui">
-      <UniqueIdentifier>{1de9917f-4858-4dbc-93a1-311437147616}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\Graphics">
       <UniqueIdentifier>{ac5b95c0-c344-40a4-af9f-775067dc6060}</UniqueIdentifier>
     </Filter>
     <Filter Include="Code\Graphics\Shader">
       <UniqueIdentifier>{ed3d276a-d245-467a-9a6f-9894d05b9158}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\Editor\Gui\Windows">
-      <UniqueIdentifier>{d60f24c6-9dec-4784-9ae3-dac38f5af66d}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\Editor\Gui\Windows\LogConsole">
-      <UniqueIdentifier>{3d9a0336-456a-4403-b7f9-78fd93bcd0cb}</UniqueIdentifier>
     </Filter>
     <Filter Include="Code\Logging">
       <UniqueIdentifier>{843ec343-ac42-4013-8742-26bcb7b13cb8}</UniqueIdentifier>
@@ -52,14 +40,8 @@
     <Filter Include="Code\ParticleSystem">
       <UniqueIdentifier>{420e71b5-74bc-49bd-b1e1-ad2dd0c4ee82}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\Editor\Time">
-      <UniqueIdentifier>{afc2b38b-0b84-48c0-9aee-7318e1dad085}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Code\Utility\Random">
       <UniqueIdentifier>{e453d480-db08-4470-96af-42d0221cb11f}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Code\Editor\Gui\Windows\Inspector">
-      <UniqueIdentifier>{5bee808b-c15b-49c0-af53-31a924b50f71}</UniqueIdentifier>
     </Filter>
     <Filter Include="Code\ParticleSystem\Particle">
       <UniqueIdentifier>{15ff7536-7755-4b46-813c-6ed8e6e65a22}</UniqueIdentifier>
@@ -70,8 +52,17 @@
     <Filter Include="Code\Application">
       <UniqueIdentifier>{a9f4c60c-beb1-49ed-a1db-779c2780cb60}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Code\Application\Context">
-      <UniqueIdentifier>{374885ed-9b93-4cd6-9f88-7767184b425a}</UniqueIdentifier>
+    <Filter Include="Code\Windows">
+      <UniqueIdentifier>{d60f24c6-9dec-4784-9ae3-dac38f5af66d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Windows\LogConsole">
+      <UniqueIdentifier>{3d9a0336-456a-4403-b7f9-78fd93bcd0cb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Windows\Inspector">
+      <UniqueIdentifier>{5bee808b-c15b-49c0-af53-31a924b50f71}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Code\Utility\Time">
+      <UniqueIdentifier>{afc2b38b-0b84-48c0-9aee-7318e1dad085}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -115,20 +106,17 @@
     <ClCompile Include="ReactValue.cpp">
       <Filter>Code\Utility\ReactValue</Filter>
     </ClCompile>
-    <ClCompile Include="EditorUi.cpp">
-      <Filter>Code\Editor\Gui</Filter>
-    </ClCompile>
     <ClCompile Include="LogConsole.cpp">
-      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
+      <Filter>Code\Windows\LogConsole</Filter>
     </ClCompile>
     <ClCompile Include="Time.cpp">
-      <Filter>Code\Editor\Time</Filter>
+      <Filter>Code\Utility\Time</Filter>
     </ClCompile>
     <ClCompile Include="Random.cpp">
       <Filter>Code\Utility\Random</Filter>
     </ClCompile>
     <ClCompile Include="Inspector.cpp">
-      <Filter>Code\Editor\Gui\Windows\Inspector</Filter>
+      <Filter>Code\Windows\Inspector</Filter>
     </ClCompile>
     <ClCompile Include="Particle.cpp">
       <Filter>Code\ParticleSystem\Particle</Filter>
@@ -204,23 +192,20 @@
     <ClInclude Include="ReactValue.h">
       <Filter>Code\Utility\ReactValue</Filter>
     </ClInclude>
-    <ClInclude Include="EditorUi.h">
-      <Filter>Code\Editor\Gui</Filter>
-    </ClInclude>
     <ClInclude Include="LogConsole.h">
-      <Filter>Code\Editor\Gui\Windows\LogConsole</Filter>
+      <Filter>Code\Windows\LogConsole</Filter>
     </ClInclude>
     <ClInclude Include="ShadersList.h">
       <Filter>Shaders</Filter>
     </ClInclude>
     <ClInclude Include="Time.h">
-      <Filter>Code\Editor\Time</Filter>
+      <Filter>Code\Utility\Time</Filter>
     </ClInclude>
     <ClInclude Include="Random.h">
       <Filter>Code\Utility\Random</Filter>
     </ClInclude>
     <ClInclude Include="Inspector.h">
-      <Filter>Code\Editor\Gui\Windows\Inspector</Filter>
+      <Filter>Code\Windows\Inspector</Filter>
     </ClInclude>
     <ClInclude Include="Particle.h">
       <Filter>Code\ParticleSystem\Particle</Filter>

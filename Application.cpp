@@ -1,7 +1,5 @@
 #include "Application.h"
 
-#define MLogger Utilities::DI::Get<Logging::Logger>()
-
 void Application::Start()
 {
     scene = std::make_unique<Scene>();
@@ -27,8 +25,4 @@ void Application::RenderScene()
 void Application::RenderUi()
 {
     editor->Render();
-
-    std::stringstream msg;
-    msg << "Frames: " << (int)(1 / scene->time->GetDeltaTime());
-    MLogger->Log(msg.str());
 }

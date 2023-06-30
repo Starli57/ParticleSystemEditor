@@ -4,7 +4,6 @@
 #include <chrono>
 #include <ctime>   
 
-#include "EditorUi.h"
 #include "ParticleSystem.h"
 #include "Di.h"
 #include "Logger.h"
