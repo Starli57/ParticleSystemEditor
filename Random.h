@@ -1,15 +1,20 @@
 #pragma once
 
 #include <iostream>
-#include <random>
 
 class Random
 {
 public:
 	Random();
+	Random(uint32_t defaultSeed);
 
-	//return value from 0 to 1
-	float Get();
+	uint32_t Get();
+	float Get01();
 	float Get(float min, float max);
+
+private:
+	uint32_t seed = 0;
+
+	uint32_t WangHash();
 };
 

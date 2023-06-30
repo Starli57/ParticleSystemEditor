@@ -4,7 +4,8 @@
 
 namespace ParticleSystemEditor
 {
-	#define Timer Utilities::DI::Get<Time>()
+	#define timer Utilities::DI::Get<Time>()
+	#define rand Utilities::DI::Get<Random>()
 
 	Particle::Particle(ParticleSettings* settings)
 	{
@@ -36,12 +37,10 @@ namespace ParticleSystemEditor
 	
 	void Particle::Setup() 
 	{
-		Random rand = Random();
-
-		float positionOffset = _settings->emissionRadius * rand.Get(-1, 1);
+		float positionOffset = _settings->emissionRadius * rand->Get(-1.0f, 1.0f);
 		_position = _settings->emissionPosition + glm::vec3(positionOffset, positionOffset, positionOffset);
-		_velocity = _settings->direction * Math::Lerp(_settings->minVelocity, _settings->maxVelocity, rand.Get(0, 1));
-		_lifetimeLimit = Math::Lerp(_settings->minLifetime, _settings->maxLifetime, rand.Get(0, 1));
+		_velocity = _settings->direction * Math::Lerp(_settings->minVelocity, _settings->maxVelocity, rand->Get(0, 1));
+		_lifetimeLimit = Math::Lerp(_settings->minLifetime, _settings->maxLifetime, rand->Get(0, 1));
 	}
 
 	void Particle::Update()
@@ -51,7 +50,7 @@ namespace ParticleSystemEditor
 			return;
 		}
 
-		_lifetime += Timer->GetDeltaTime();
+		_lifetime += timer->GetDeltaTime();
 		UpdatePosition();
 	}
 
