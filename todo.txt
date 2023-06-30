@@ -1,6 +1,6 @@
-*Code design
 
-*Engine
+*Code design
+**make MeshRenderer component
 
 *Optimization
 **Use linked lists to find not active particles
@@ -9,13 +9,10 @@
 **Setup max number of particles
 **Setup emitted number of particles per frame
 **Ability to setup different directions\angles
-**Gravity
 **Particles Physics
+***Gravity
+***Collisions
 **Rotation parameter
-
-*Log system
-**More messages in logs
-**Stack the same messages as 1
 
 *Render
 **Fix objects transformations dependent on screen size
@@ -28,4 +25,3 @@
 
 *Other
 **Set target FPS
-**Make better Random impelemntation

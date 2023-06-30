@@ -41,6 +41,7 @@ namespace ParticleSystemEditor
 			delete particle;
 		}
 		delete particles;
+		delete settings;
 	}
 
 	void ParticleSystem::Update()
