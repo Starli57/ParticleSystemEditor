@@ -9,8 +9,8 @@
 #include <sstream>
 #include <iostream>
 
-#include "Logger.h"
-#include "Di.h"
+#include "../code/utility/di/Di.h"
+#include "../code/windows/console/LogConsole.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

@@ -88,55 +88,55 @@
       <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="shader.cpp">
+    <ClCompile Include="code\graphics\shaders\Shader.cpp">
       <Filter>Code\Graphics\Shader</Filter>
     </ClCompile>
     <ClCompile Include="libs\glad\src\glad.c">
       <Filter>ThirdParty</Filter>
     </ClCompile>
-    <ClCompile Include="logger.cpp">
+    <ClCompile Include="code\logging\Logger.cpp">
       <Filter>Code\Logging</Filter>
     </ClCompile>
-    <ClCompile Include="di.cpp">
+    <ClCompile Include="code\utility\di\Di.cpp">
       <Filter>Code\Utility\DI</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleSystem.cpp">
+    <ClCompile Include="code\particleSystem\ParticleSystem.cpp">
       <Filter>Code\ParticleSystem</Filter>
     </ClCompile>
-    <ClCompile Include="ReactValue.cpp">
+    <ClCompile Include="code\utility\reactValue\ReactValue.cpp">
       <Filter>Code\Utility\ReactValue</Filter>
     </ClCompile>
-    <ClCompile Include="LogConsole.cpp">
+    <ClCompile Include="code\windows\console\LogConsole.cpp">
       <Filter>Code\Windows\LogConsole</Filter>
     </ClCompile>
-    <ClCompile Include="Time.cpp">
+    <ClCompile Include="code\utility\time\Time.cpp">
       <Filter>Code\Utility\Time</Filter>
     </ClCompile>
-    <ClCompile Include="Random.cpp">
+    <ClCompile Include="code\utility\random\Random.cpp">
       <Filter>Code\Utility\Random</Filter>
     </ClCompile>
-    <ClCompile Include="Inspector.cpp">
+    <ClCompile Include="code\windows\inspector\Inspector.cpp">
       <Filter>Code\Windows\Inspector</Filter>
     </ClCompile>
-    <ClCompile Include="Particle.cpp">
+    <ClCompile Include="code\particleSystem\particle\Particle.cpp">
       <Filter>Code\ParticleSystem\Particle</Filter>
     </ClCompile>
-    <ClCompile Include="ParticleSettings.cpp">
+    <ClCompile Include="code\particleSystem\particle\ParticleSettings.cpp">
       <Filter>Code\ParticleSystem\Particle</Filter>
     </ClCompile>
-    <ClCompile Include="Math.cpp">
+    <ClCompile Include="code\utility\math\Math.cpp">
       <Filter>Code\Utility\Math</Filter>
     </ClCompile>
-    <ClCompile Include="Application.cpp">
+    <ClCompile Include="code\application\Application.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="Scene.cpp">
+    <ClCompile Include="code\application\Scene.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="Editor.cpp">
+    <ClCompile Include="code\application\Editor.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="AppRuntime.cpp">
+    <ClCompile Include="code\application\AppRuntime.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
   </ItemGroup>
@@ -168,72 +168,72 @@
     <ClInclude Include="libs\imgui\imgui_impl_opengl3_loader.h">
       <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="vertex.h">
+    <ClInclude Include="code\graphics\Vertex.h">
       <Filter>Code\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="triangle.h">
+    <ClInclude Include="code\graphics\Triangle.h">
       <Filter>Code\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="mesh.h">
+    <ClInclude Include="code\graphics\Mesh.h">
       <Filter>Code\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="shader.h">
+    <ClInclude Include="code\graphics\shaders\Shader.h">
       <Filter>Code\Graphics\Shader</Filter>
     </ClInclude>
-    <ClInclude Include="logger.h">
+    <ClInclude Include="code\logging\Logger.h">
       <Filter>Code\Logging</Filter>
     </ClInclude>
-    <ClInclude Include="di.h">
+    <ClInclude Include="code\utility\di\Di.h">
       <Filter>Code\Utility\DI</Filter>
     </ClInclude>
-    <ClInclude Include="ParticleSystem.h">
+    <ClInclude Include="code\particleSystem\ParticleSystem.h">
       <Filter>Code\ParticleSystem</Filter>
     </ClInclude>
-    <ClInclude Include="ReactValue.h">
+    <ClInclude Include="code\utility\reactValue\ReactValue.h">
       <Filter>Code\Utility\ReactValue</Filter>
     </ClInclude>
-    <ClInclude Include="LogConsole.h">
+    <ClInclude Include="code\windows\console\LogConsole.h">
       <Filter>Code\Windows\LogConsole</Filter>
     </ClInclude>
-    <ClInclude Include="ShadersList.h">
+    <ClInclude Include="shaders\ShadersList.h">
       <Filter>Shaders</Filter>
     </ClInclude>
-    <ClInclude Include="Time.h">
+    <ClInclude Include="code\utility\time\Time.h">
       <Filter>Code\Utility\Time</Filter>
     </ClInclude>
-    <ClInclude Include="Random.h">
+    <ClInclude Include="code\utility\random\Random.h">
       <Filter>Code\Utility\Random</Filter>
     </ClInclude>
-    <ClInclude Include="Inspector.h">
+    <ClInclude Include="code\windows\inspector\Inspector.h">
       <Filter>Code\Windows\Inspector</Filter>
     </ClInclude>
-    <ClInclude Include="Particle.h">
+    <ClInclude Include="code\particleSystem\particle\Particle.h">
       <Filter>Code\ParticleSystem\Particle</Filter>
     </ClInclude>
-    <ClInclude Include="ParticleSettings.h">
+    <ClInclude Include="code\particleSystem\particle\ParticleSettings.h">
       <Filter>Code\ParticleSystem\Particle</Filter>
     </ClInclude>
-    <ClInclude Include="Math.h">
+    <ClInclude Include="code\utility\math\Math.h">
       <Filter>Code\Utility\Math</Filter>
     </ClInclude>
-    <ClInclude Include="AppRuntime.h">
+    <ClInclude Include="code\application\AppRuntime.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="Application.h">
+    <ClInclude Include="code\application\Application.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="Editor.h">
+    <ClInclude Include="code\application\Editor.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="Scene.h">
+    <ClInclude Include="code\application\Scene.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
-    <None Include="default.vert">
+    <None Include="shaders\Default.vert">
       <Filter>Shaders</Filter>
     </None>
-    <None Include="default.frag">
+    <None Include="shaders\Default.frag">
       <Filter>Shaders</Filter>
     </None>
   </ItemGroup>

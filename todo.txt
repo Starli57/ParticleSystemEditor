@@ -13,6 +13,7 @@
 ***Gravity
 ***Collisions
 **Rotation parameter
+**Use delta time
 
 *Render
 **Fix objects transformations dependent on screen size

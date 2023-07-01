@@ -3,18 +3,13 @@
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>
 
-#include "LogConsole.h"
-
 #include "ParticleSettings.h"
-#include "Shader.h"
-#include "ShadersList.h"
+#include "../code/graphics/shaders/Shader.h"
+#include "../shaders/ShadersList.h"
 
-#include "Vertex.h"
-#include "Triangle.h"
-
-#include "Random.h"
-#include "Time.h"
-#include "Math.h"
+#include "../code/utility/random/Random.h"
+#include "../code/utility/time/Time.h"
+#include "../code/utility/math/Math.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

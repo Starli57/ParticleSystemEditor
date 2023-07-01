@@ -2,6 +2,7 @@
 
 #include "Scene.h"
 #include "Editor.h"
+#include "../code/utility/time/Time.h"
 
 class Application
 {

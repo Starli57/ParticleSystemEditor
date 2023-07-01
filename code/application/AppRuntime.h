@@ -8,8 +8,8 @@
 #include <stdio.h>
 
 #include "Application.h"
-#include "Di.h"
-#include "Logger.h"
+#include "../utility/di/Di.h"
+#include "../code/utility/time/Time.h"
 
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>

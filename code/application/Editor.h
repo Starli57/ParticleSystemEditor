@@ -1,9 +1,10 @@
 #pragma once
 #include <iostream>
 
-#include "Inspector.h"
-#include "ParticleSystem.h"
-#include "Di.h"
+#include "../code/windows/inspector/Inspector.h"
+#include "../code/particleSystem/ParticleSystem.h"
+#include "../code/utility/di/Di.h"
+#include "../code/windows/console/LogConsole.h"
 
 using namespace ParticleSystemEditor;
 

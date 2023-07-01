@@ -108,6 +108,7 @@
       <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <ConformanceMode>true</ConformanceMode>
       <AdditionalIncludeDirectories>C:\My\Projects\ParticleSystem_Cpp\libs\glm;C:\My\Projects\ParticleSystem_Cpp\libs\glad\include;C:\My\Projects\ParticleSystem_Cpp\libs;C:\My\Projects\ParticleSystem_Cpp\libs\glfw\include\GLFW;C:\My\Projects\ParticleSystem_Cpp\libs\glfw\include;C:\My\Projects\ParticleSystem_Cpp\libs\imgui;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <LanguageStandard>stdcpp20</LanguageStandard>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
@@ -133,22 +134,22 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="Application.cpp" />
-    <ClCompile Include="AppRuntime.cpp" />
-    <ClCompile Include="Scene.cpp" />
-    <ClCompile Include="Di.cpp" />
-    <ClCompile Include="Editor.cpp" />
-    <ClCompile Include="Inspector.cpp" />
-    <ClCompile Include="Math.cpp" />
-    <ClCompile Include="Particle.cpp" />
-    <ClCompile Include="ParticleSettings.cpp" />
-    <ClCompile Include="ParticleSystem.cpp" />
+    <ClCompile Include="code\application\Application.cpp" />
+    <ClCompile Include="code\application\AppRuntime.cpp" />
+    <ClCompile Include="code\application\Scene.cpp" />
+    <ClCompile Include="code\utility\di\Di.cpp" />
+    <ClCompile Include="code\application\Editor.cpp" />
+    <ClCompile Include="code\windows\inspector\Inspector.cpp" />
+    <ClCompile Include="code\utility\math\Math.cpp" />
+    <ClCompile Include="code\particleSystem\particle\Particle.cpp" />
+    <ClCompile Include="code\particleSystem\particle\ParticleSettings.cpp" />
+    <ClCompile Include="code\particleSystem\ParticleSystem.cpp" />
     <ClCompile Include="libs\glad\src\glad.c" />
-    <ClCompile Include="Logger.cpp" />
-    <ClCompile Include="LogConsole.cpp" />
-    <ClCompile Include="Random.cpp" />
-    <ClCompile Include="ReactValue.cpp" />
-    <ClCompile Include="Shader.cpp" />
+    <ClCompile Include="code\logging\Logger.cpp" />
+    <ClCompile Include="code\windows\console\LogConsole.cpp" />
+    <ClCompile Include="code\utility\random\Random.cpp" />
+    <ClCompile Include="code\utility\reactValue\ReactValue.cpp" />
+    <ClCompile Include="code\graphics\shaders\Shader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
     <ClCompile Include="libs\imgui\imgui_demo.cpp" />
@@ -157,19 +158,19 @@
     <ClCompile Include="libs\imgui\imgui_impl_opengl3.cpp" />
     <ClCompile Include="libs\imgui\imgui_tables.cpp" />
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
-    <ClCompile Include="Time.cpp" />
+    <ClCompile Include="code\utility\time\Time.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="Application.h" />
-    <ClInclude Include="Scene.h" />
-    <ClInclude Include="AppRuntime.h" />
-    <ClInclude Include="Di.h" />
-    <ClInclude Include="Editor.h" />
-    <ClInclude Include="Inspector.h" />
-    <ClInclude Include="Math.h" />
-    <ClInclude Include="Particle.h" />
-    <ClInclude Include="ParticleSettings.h" />
-    <ClInclude Include="ParticleSystem.h" />
+    <ClInclude Include="code\application\Application.h" />
+    <ClInclude Include="code\application\Scene.h" />
+    <ClInclude Include="code\application\AppRuntime.h" />
+    <ClInclude Include="code\utility\di\Di.h" />
+    <ClInclude Include="code\application\Editor.h" />
+    <ClInclude Include="code\windows\inspector\Inspector.h" />
+    <ClInclude Include="code\utility\math\Math.h" />
+    <ClInclude Include="code\particleSystem\particle\Particle.h" />
+    <ClInclude Include="code\particleSystem\particle\ParticleSettings.h" />
+    <ClInclude Include="code\particleSystem\ParticleSystem.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="libs\imgui\imgui.h" />
     <ClInclude Include="libs\imgui\imgui_impl_glfw.h" />
@@ -179,20 +180,20 @@
     <ClInclude Include="libs\imgui\imstb_rectpack.h" />
     <ClInclude Include="libs\imgui\imstb_textedit.h" />
     <ClInclude Include="libs\imgui\imstb_truetype.h" />
-    <ClInclude Include="Logger.h" />
-    <ClInclude Include="LogConsole.h" />
-    <ClInclude Include="Mesh.h" />
-    <ClInclude Include="Random.h" />
-    <ClInclude Include="ReactValue.h" />
-    <ClInclude Include="Shader.h" />
-    <ClInclude Include="ShadersList.h" />
-    <ClInclude Include="Time.h" />
-    <ClInclude Include="Triangle.h" />
-    <ClInclude Include="Vertex.h" />
+    <ClInclude Include="code\logging\Logger.h" />
+    <ClInclude Include="code\windows\console\LogConsole.h" />
+    <ClInclude Include="code\graphics\Mesh.h" />
+    <ClInclude Include="code\utility\random\Random.h" />
+    <ClInclude Include="code\utility\reactValue\ReactValue.h" />
+    <ClInclude Include="code\graphics\shaders\Shader.h" />
+    <ClInclude Include="shaders\ShadersList.h" />
+    <ClInclude Include="code\utility\time\Time.h" />
+    <ClInclude Include="code\graphics\Triangle.h" />
+    <ClInclude Include="code\graphics\Vertex.h" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Default.vert" />
-    <None Include="Default.frag" />
+    <None Include="shaders\Default.vert" />
+    <None Include="shaders\Default.frag" />
   </ItemGroup>
   <ItemGroup>
     <Text Include="todo.txt" />

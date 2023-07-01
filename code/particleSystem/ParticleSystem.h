@@ -10,9 +10,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
-#include "LogConsole.h"
-
-#include "Particle.h"
+#include "particle/Particle.h"
 
 namespace ParticleSystemEditor
 {
