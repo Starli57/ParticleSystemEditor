@@ -41,6 +41,9 @@ namespace ParticleSystemEditor
 
 		glm::vec3 _position;
 		glm::vec3 _velocity;
+		
+		float _rotation;
+		float _rotationVelocity;
 
 		float _lifetime;
 		float _lifetimeLimit;
@@ -49,5 +52,8 @@ namespace ParticleSystemEditor
 		void SetupProjectionMatrix();
 
 		void UpdatePosition();
+		void UpdateVelocity();
+		
+		void UpdateRotation();
 	};
 }

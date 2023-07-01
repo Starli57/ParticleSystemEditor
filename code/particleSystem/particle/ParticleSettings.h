@@ -8,13 +8,24 @@ struct ParticleSettings
 	glm::vec4 endColor;
 
 	glm::vec3 emissionPosition;
-	float emissionRadius;
+	glm::vec3 emissionRadius;
 
 	glm::vec3 direction;
+	glm::vec3 directionNoise;
+
 	float minVelocity;
 	float maxVelocity;
+	float velocityDamping;
+
+	glm::vec3 rotationVector;
+	float minRotation;
+	float maxRotation;
+
+	glm::vec3 startScale;
+	glm::vec3 endScale;
 
 	float minLifetime;
 	float maxLifetime;
+
 };
 

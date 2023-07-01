@@ -37,10 +37,21 @@ namespace ParticleSystemEditor
 	
 	void Particle::Setup() 
 	{
-		float positionOffset = _settings->emissionRadius * rand->Get(-1.0f, 1.0f);
-		_position = _settings->emissionPosition + glm::vec3(positionOffset, positionOffset, positionOffset);
-		_velocity = _settings->direction * Math::Lerp(_settings->minVelocity, _settings->maxVelocity, rand->Get(0, 1));
-		_lifetimeLimit = Math::Lerp(_settings->minLifetime, _settings->maxLifetime, rand->Get(0, 1));
+		_position = _settings->emissionPosition + glm::vec3(
+			_settings->emissionRadius.x * rand->Get(-1.0f, 1.0f), 
+			_settings->emissionRadius.y * rand->Get(-1.0f, 1.0f), 
+			_settings->emissionRadius.z * rand->Get(-1.0f, 1.0f));
+
+		float velocityMultiplier = Math::Lerp(_settings->minVelocity, _settings->maxVelocity, rand->Get01());
+		glm::vec3 velocityDirection = _settings->direction + glm::vec3(
+			_settings->directionNoise.x * rand->Get(-1, 1), 
+			_settings->directionNoise.y * rand->Get(-1, 1), 
+			_settings->directionNoise.z * rand->Get(-1, 1));
+
+		_velocity = velocityDirection * velocityMultiplier;
+		_rotationVelocity = Math::Lerp(_settings->minRotation, _settings->maxRotation, rand->Get01());
+
+		_lifetimeLimit = Math::Lerp(_settings->minLifetime, _settings->maxLifetime, rand->Get01());
 	}
 
 	void Particle::Update()
@@ -50,13 +61,26 @@ namespace ParticleSystemEditor
 			return;
 		}
 
-		_lifetime += timer->GetDeltaTime();
+		_lifetime += (float)timer->GetDeltaTime();
+
+		UpdateVelocity();
 		UpdatePosition();
+		UpdateRotation();
 	}
 
 	void Particle::UpdatePosition() 
 	{
-		_position += _velocity;
+		_position += _velocity * (float)timer->GetDeltaTime();
+	}
+
+	void Particle::UpdateVelocity()
+	{
+		_velocity *= (1 - _settings->velocityDamping);//todo: add DeltaTime
+	}
+
+	void Particle::UpdateRotation()
+	{
+		_rotation += _rotationVelocity * (float)timer->GetDeltaTime();
 	}
 
 	void Particle::Render() 
@@ -100,8 +124,8 @@ namespace ParticleSystemEditor
 		// create transformations
 		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
 		view = glm::translate(view, _position);
-		view = glm::rotate(view, (float)glfwGetTime(), glm::vec3(0.0f, 0.0f, 1.0f));
-
+		view = glm::rotate(view, _rotation, _settings->rotationVector);
+		view = glm::scale(view, Math::Lerp(_settings->startScale, _settings->endScale, GetLifetimeAspect()));
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, glm::vec3(0, 0, 0));
 
