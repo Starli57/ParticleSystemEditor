@@ -13,6 +13,7 @@ namespace ParticleSystemEditor
 
         if (ImGui::CollapsingHeader("Emission"))
         {
+            ImGui::SliderInt("Particles in second", &_settings->emissionCount, 0, 1200);
             ImGui::DragFloat3("Position", glm::value_ptr(_settings->emissionPosition), 0.1f);
             ImGui::DragFloat3("Radius", glm::value_ptr(_settings->emissionRadius), 0.01f, 0, ImGuiSliderFlags_AlwaysClamp);
         }

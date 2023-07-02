@@ -90,6 +90,7 @@ namespace ParticleSystemEditor
 			return;
 		}
 
+
 		float vertexes[] =
 		{
 		//   positions
@@ -134,7 +135,7 @@ namespace ParticleSystemEditor
 		_shader->setMat4("view", view);
 		_shader->setMat4("model", model);
 		_shader->setVec4("inColor", color);
-
+		
 		glBindBuffer(GL_ARRAY_BUFFER, 0);
 		glBindVertexArray(0);
 

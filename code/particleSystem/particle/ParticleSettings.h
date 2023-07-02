@@ -9,6 +9,7 @@ struct ParticleSettings
 
 	glm::vec3 emissionPosition;
 	glm::vec3 emissionRadius;
+	int emissionCount;
 
 	glm::vec3 direction;
 	glm::vec3 directionNoise;

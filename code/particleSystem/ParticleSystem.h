@@ -29,6 +29,7 @@ namespace ParticleSystemEditor
 
 	private:
 		ParticleSettings* settings;
+		float restEmission;
 
 		void Emit();
 	};
