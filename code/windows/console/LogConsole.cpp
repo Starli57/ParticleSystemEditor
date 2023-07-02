@@ -5,7 +5,7 @@ namespace ParticleSystemEditor
 {
 	void LogConsole::Render()
 	{
-        ImGui::Begin("LogConsole"); 
+        ImGui::Begin("Log Console"); 
 
         std::shared_ptr<Logging::Logger> logger = Utilities::DI::Get<Logging::Logger>();
         for (int i = 0; i < logger->GetMaxMessagesCount(); i++)

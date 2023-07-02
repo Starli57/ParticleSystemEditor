@@ -139,6 +139,7 @@
     <ClCompile Include="code\application\AppRuntime.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
+    <ClCompile Include="code\windows\statusDisplay\StatusDisplay.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\imgui\imconfig.h">
@@ -228,6 +229,7 @@
     <ClInclude Include="code\application\Scene.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
+    <ClInclude Include="code\windows\statusDisplay\StatusDisplay.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\Default.vert">

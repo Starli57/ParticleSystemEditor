@@ -144,6 +144,7 @@
     <ClCompile Include="code\particleSystem\particle\Particle.cpp" />
     <ClCompile Include="code\particleSystem\particle\ParticleSettings.cpp" />
     <ClCompile Include="code\particleSystem\ParticleSystem.cpp" />
+    <ClCompile Include="code\windows\statusDisplay\StatusDisplay.cpp" />
     <ClCompile Include="libs\glad\src\glad.c" />
     <ClCompile Include="code\logging\Logger.cpp" />
     <ClCompile Include="code\windows\console\LogConsole.cpp" />
@@ -171,6 +172,7 @@
     <ClInclude Include="code\particleSystem\particle\Particle.h" />
     <ClInclude Include="code\particleSystem\particle\ParticleSettings.h" />
     <ClInclude Include="code\particleSystem\ParticleSystem.h" />
+    <ClInclude Include="code\windows\statusDisplay\StatusDisplay.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="libs\imgui\imgui.h" />
     <ClInclude Include="libs\imgui\imgui_impl_glfw.h" />
