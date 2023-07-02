@@ -29,12 +29,18 @@ AppRuntime::AppRuntime()
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 0);
 #endif
+    glfwWindowHint(GLFW_SAMPLES, 4);
 
-    window = glfwCreateWindow(800, 800, "Cards editor", nullptr, nullptr);
+    window = glfwCreateWindow(800, 800, "Particle System", nullptr, nullptr);
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);
     gladLoadGL();
+
+    glEnable(GL_MULTISAMPLE);
+    glEnable(GL_DEPTH_TEST);
+    glEnable(GL_BLEND);
+    glBlendFunc(GL_SRC_ALPHA, GL_ONE_MINUS_SRC_ALPHA);
 
     // Setup Dear ImGui context
     IMGUI_CHECKVERSION();
@@ -90,7 +96,7 @@ void AppRuntime::Run()
         glfwGetFramebufferSize(window, &display_w, &display_h);
         glViewport(0, 0, display_w, display_h);
         glClearColor(clear_color.x * clear_color.w, clear_color.y * clear_color.w, clear_color.z * clear_color.w, clear_color.w);
-        glClear(GL_COLOR_BUFFER_BIT);
+        glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
         ImGui_ImplOpenGL3_RenderDrawData(ImGui::GetDrawData());
 
         RenderScene();

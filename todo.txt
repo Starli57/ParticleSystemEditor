@@ -17,7 +17,8 @@
 
 *Render
 **Fix objects transformations dependent on screen size
-**Add alpha for particles
+**Render the closest objects first (for correct blending)
+**Render Instancing for particles
 
 *Camera
 **Add camera entity

@@ -32,7 +32,7 @@ namespace ParticleSystemEditor
 		settings->maxLifetime = 7;
 
 		settings->startColor = glm::vec4(1.0f, 0.5f, 0.2f, 1.0f);
-		settings->endColor = glm::vec4(0.5f, 0.2f, 0.275f, 0);
+		settings->endColor = glm::vec4(1.0f, 0.88f, 0.2f, 0);
 
 		int particlesCount = 200;
 		particles = new std::vector<Particle*>();
