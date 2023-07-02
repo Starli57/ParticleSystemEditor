@@ -30,6 +30,7 @@ namespace ParticleSystemEditor
 	private:
 		ParticleSettings* settings;
 		float restEmission;
+		int lastSpawnIndex;
 
 		void Emit();
 	};

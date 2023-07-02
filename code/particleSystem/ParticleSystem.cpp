@@ -11,6 +11,9 @@ namespace ParticleSystemEditor
 
 	ParticleSystem::ParticleSystem()
 	{
+		restEmission = 0;
+		lastSpawnIndex = 0;
+
 		settings = new ParticleSettings();
 
 		settings->emissionPosition = glm::vec3(0, 0, 2);
@@ -37,7 +40,7 @@ namespace ParticleSystemEditor
 		settings->startColor = glm::vec4(1.0f, 0.5f, 0.2f, 1.0f);
 		settings->endColor = glm::vec4(1.0f, 0.88f, 0.2f, 0);
 
-		int particlesLimit = 500;
+		int particlesLimit = 2500;
 		particles = new std::vector<Particle*>();
 		particles->reserve(particlesLimit);
 
@@ -80,18 +83,21 @@ namespace ParticleSystemEditor
 		float frameEmission = settings->emissionCount * timer->GetDeltaTime();
 		float totalEmission = frameEmission + restEmission;
 
-		int particlesCount = (int)totalEmission;
-		restEmission = totalEmission - particlesCount;
+		int spawnTarget = (int)totalEmission;
+		restEmission = totalEmission - spawnTarget;
 
-		for (Particle* particle : *particles)
+		int particlesCount = particles->size();
+		for (int i = 0; i < particlesCount && spawnTarget > 0; i++)
 		{
-			if (particlesCount <= 0) return;
+			int particleIndex = (lastSpawnIndex + 1) % particlesCount;
+			Particle* particle = particles->at(particleIndex);
 
 			if (particle->GetIsVisible()) continue;
 
 			particle->Setup();
 			particle->Activate();
-			particlesCount--;
+			spawnTarget--;
+			lastSpawnIndex = particleIndex;
 		}
 	}
 }
