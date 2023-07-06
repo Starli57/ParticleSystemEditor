@@ -4,7 +4,8 @@ void StatusDisplay::Render()
 {
     ImGui::Begin("Status Display");
 
-    ImGui::Text("FPS: %.1f", ImGui::GetIO().Framerate);
-    
+    ImGuiIO io = ImGui::GetIO();
+    ImGui::Text("FPS: %.1f", io.Framerate);
+
     ImGui::End();
 }

@@ -4,12 +4,16 @@
 
 struct ParticleSettings
 {
+	ParticleSettings();
+
 	glm::vec4 startColor;
 	glm::vec4 endColor;
 
 	glm::vec3 emissionPosition;
 	glm::vec3 emissionRadius;
-	int emissionCount;
+
+	int particlesPerEmission;
+	float emissionPeriod;
 
 	glm::vec3 direction;
 	glm::vec3 directionNoise;

@@ -10,6 +10,7 @@
 #include <glm/gtc/matrix_transform.hpp>
 #include <glm/gtc/type_ptr.hpp>
 
+#include "ParticlesEmitter.h"
 #include "particle/Particle.h"
 
 namespace ParticleSystemEditor
@@ -29,9 +30,8 @@ namespace ParticleSystemEditor
 
 	private:
 		ParticleSettings* settings;
-		float restEmission;
-		int lastSpawnIndex;
+		ParticlesEmitter* emitter;
 
-		void Emit();
+		void UpdateParticles();
 	};
 }

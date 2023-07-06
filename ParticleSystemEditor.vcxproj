@@ -137,14 +137,14 @@
     <ClCompile Include="code\application\Application.cpp" />
     <ClCompile Include="code\application\AppRuntime.cpp" />
     <ClCompile Include="code\application\Scene.cpp" />
+    <ClCompile Include="code\particleSystem\particle\ParticleSettings.cpp" />
     <ClCompile Include="code\utility\di\Di.cpp" />
     <ClCompile Include="code\application\Editor.cpp" />
     <ClCompile Include="code\windows\inspector\Inspector.cpp" />
-    <ClCompile Include="code\utility\math\Math.cpp" />
     <ClCompile Include="code\particleSystem\particle\Particle.cpp" />
-    <ClCompile Include="code\particleSystem\particle\ParticleSettings.cpp" />
     <ClCompile Include="code\particleSystem\ParticleSystem.cpp" />
     <ClCompile Include="code\windows\statusDisplay\StatusDisplay.cpp" />
+    <ClCompile Include="code\ImguiStyles.cpp" />
     <ClCompile Include="libs\glad\src\glad.c" />
     <ClCompile Include="code\logging\Logger.cpp" />
     <ClCompile Include="code\windows\console\LogConsole.cpp" />
@@ -160,6 +160,7 @@
     <ClCompile Include="libs\imgui\imgui_tables.cpp" />
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="code\utility\time\Time.cpp" />
+    <ClCompile Include="code\particleSystem\ParticlesEmitter.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="code\application\Application.h" />
@@ -173,6 +174,7 @@
     <ClInclude Include="code\particleSystem\particle\ParticleSettings.h" />
     <ClInclude Include="code\particleSystem\ParticleSystem.h" />
     <ClInclude Include="code\windows\statusDisplay\StatusDisplay.h" />
+    <ClInclude Include="code\ImguiStyles.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="libs\imgui\imgui.h" />
     <ClInclude Include="libs\imgui\imgui_impl_glfw.h" />
@@ -188,6 +190,7 @@
     <ClInclude Include="code\utility\random\Random.h" />
     <ClInclude Include="code\utility\reactValue\ReactValue.h" />
     <ClInclude Include="code\graphics\shaders\Shader.h" />
+    <ClInclude Include="code\particleSystem\ParticlesEmitter.h" />
     <ClInclude Include="shaders\ShadersList.h" />
     <ClInclude Include="code\utility\time\Time.h" />
     <ClInclude Include="code\graphics\Triangle.h" />

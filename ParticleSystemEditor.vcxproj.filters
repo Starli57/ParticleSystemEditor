@@ -121,12 +121,6 @@
     <ClCompile Include="code\particleSystem\particle\Particle.cpp">
       <Filter>Code\ParticleSystem\Particle</Filter>
     </ClCompile>
-    <ClCompile Include="code\particleSystem\particle\ParticleSettings.cpp">
-      <Filter>Code\ParticleSystem\Particle</Filter>
-    </ClCompile>
-    <ClCompile Include="code\utility\math\Math.cpp">
-      <Filter>Code\Utility\Math</Filter>
-    </ClCompile>
     <ClCompile Include="code\application\Application.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
@@ -140,6 +134,9 @@
       <Filter>Code\Application</Filter>
     </ClCompile>
     <ClCompile Include="code\windows\statusDisplay\StatusDisplay.cpp" />
+    <ClCompile Include="code\ImguiStyles.cpp" />
+    <ClCompile Include="code\particleSystem\ParticlesEmitter.cpp" />
+    <ClCompile Include="code\particleSystem\particle\ParticleSettings.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\imgui\imconfig.h">
@@ -230,6 +227,8 @@
       <Filter>Code\Application</Filter>
     </ClInclude>
     <ClInclude Include="code\windows\statusDisplay\StatusDisplay.h" />
+    <ClInclude Include="code\ImguiStyles.h" />
+    <ClInclude Include="code\particleSystem\ParticlesEmitter.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\Default.vert">

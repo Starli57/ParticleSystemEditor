@@ -2,8 +2,6 @@
 
 namespace ParticleSystemEditor
 {
-	#define timer Utilities::DI::Get<Time>()
-
 	ParticleSettings* ParticleSystem::GetParticleSettingsPtr() 
 	{
 		return settings;
@@ -11,34 +9,7 @@ namespace ParticleSystemEditor
 
 	ParticleSystem::ParticleSystem()
 	{
-		restEmission = 0;
-		lastSpawnIndex = 0;
-
 		settings = new ParticleSettings();
-
-		settings->emissionPosition = glm::vec3(0, 0, 2);
-		settings->emissionRadius = glm::vec3(10, 10, 0);
-		settings->emissionCount = 120;
-
-		settings->direction = glm::vec3(0, 0, -1);
-		settings->directionNoise = glm::vec3(1, 0.5f, 0.25f);
-
-		settings->rotationVector = glm::vec3(1, 1, 1);
-		settings->minRotation = -2;
-		settings->maxRotation =  2;
-
-		settings->minVelocity = 1;
-		settings->maxVelocity = 7;
-		settings->velocityDamping = 0.0001f;
-
-		settings->startScale = glm::vec3(1, 1, 1);
-		settings->endScale = glm::vec3(0, 0, 0);
-
-		settings->minLifetime = 3;
-		settings->maxLifetime = 7;
-
-		settings->startColor = glm::vec4(1.0f, 0.5f, 0.2f, 1.0f);
-		settings->endColor = glm::vec4(1.0f, 0.88f, 0.2f, 0);
 
 		int particlesLimit = 2500;
 		particles = new std::vector<Particle*>();
@@ -48,26 +19,25 @@ namespace ParticleSystemEditor
 		{
 			particles->push_back(new Particle(settings));
 		}
+
+		emitter = new ParticlesEmitter(settings, particles);
 	}
 
 	ParticleSystem::~ParticleSystem()
 	{
-		for (Particle* particle : *particles) 
+		for (Particle* particle : *particles)
 		{
 			delete particle;
 		}
 		delete particles;
+		delete emitter;
 		delete settings;
 	}
 
 	void ParticleSystem::Update()
 	{
-		Emit();
-
-		for (Particle* particle : *particles)
-		{
-			particle->Update();
-		}
+		emitter->Update();
+		UpdateParticles();
 	}
 
 	void ParticleSystem::Render()
@@ -78,26 +48,11 @@ namespace ParticleSystemEditor
 		}
 	}
 
-	void ParticleSystem::Emit() 
+	void ParticleSystem::UpdateParticles()
 	{
-		float frameEmission = settings->emissionCount * timer->GetDeltaTime();
-		float totalEmission = frameEmission + restEmission;
-
-		int spawnTarget = (int)totalEmission;
-		restEmission = totalEmission - spawnTarget;
-
-		int particlesCount = particles->size();
-		for (int i = 0; i < particlesCount && spawnTarget > 0; i++)
+		for (Particle* particle : *particles)
 		{
-			int particleIndex = (lastSpawnIndex + 1) % particlesCount;
-			Particle* particle = particles->at(particleIndex);
-
-			if (particle->GetIsVisible()) continue;
-
-			particle->Setup();
-			particle->Activate();
-			spawnTarget--;
-			lastSpawnIndex = particleIndex;
+			particle->Update();
 		}
 	}
 }
