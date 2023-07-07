@@ -52,7 +52,7 @@ AppRuntime::AppRuntime()
     io->ConfigFlags |= ImGuiConfigFlags_ViewportsEnable;       // Enable Multi-Viewport / Platform Windows
     io->ConfigViewportsNoAutoMerge = true;
 
-    ImGui::StyleColorsDark();
+    ImguiStyles().SetupEditorStyle();
 
     // Setup Platform/Renderer backends
     ImGui_ImplGlfw_InitForOpenGL(window, true);
@@ -78,7 +78,7 @@ AppRuntime::~AppRuntime()
 
 void AppRuntime::Run()
 {
-    ImVec4 clear_color = ImVec4(0.075f, 0.15f, 0.2f, 1.00f);
+    ImVec4 clear_color = ImVec4(0.1f, 0.1f, 0.15f, 1.00f);
     while (!glfwWindowShouldClose(window))
     {
         glfwPollEvents();

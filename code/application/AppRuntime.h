@@ -10,6 +10,7 @@
 #include "Application.h"
 #include "../utility/di/Di.h"
 #include "../code/utility/time/Time.h"
+#include "../ImguiStyles.h"
 
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>

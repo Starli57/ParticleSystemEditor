@@ -241,4 +241,10 @@
   <ItemGroup>
     <Text Include="todo.txt" />
   </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\Roboto-Bold.ttf" />
+    <Font Include="fonts\Roboto-Light.ttf" />
+    <Font Include="fonts\Roboto-Regular.ttf" />
+    <Font Include="fonts\Roboto-Medium.ttf" />
+  </ItemGroup>
 </Project>
