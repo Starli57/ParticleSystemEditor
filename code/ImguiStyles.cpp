@@ -6,9 +6,8 @@ void SetupFont()
     io.Fonts->AddFontFromFileTTF("fonts/Roboto-Medium.ttf", 16);
 }
 
-void ImguiStyles::SetupEditorStyle()
+void SetupColors()
 {
-    SetupFont();
 
     auto& colors = ImGui::GetStyle().Colors;
     colors[ImGuiCol_WindowBg] = ImVec4{ 0.1f, 0.1f, 0.12f, 1.0f };
@@ -24,7 +23,7 @@ void ImguiStyles::SetupEditorStyle()
 
     // Headers
     colors[ImGuiCol_Header] = ImVec4{ 0.2f, 0.2f, 0.4f, 1.0f };
-    colors[ImGuiCol_HeaderHovered] = ImVec4{ 0.19f, 0.2f, 0.25f, 1.0f };
+    colors[ImGuiCol_HeaderHovered] = ImVec4{ 0.35f, 0.35f, 0.55f, 1.0f };
     colors[ImGuiCol_HeaderActive] = ImVec4{ 0.16f, 0.16f, 0.21f, 1.0f };
 
     // Buttons
@@ -75,7 +74,10 @@ void ImguiStyles::SetupEditorStyle()
 
     // Docking
     colors[ImGuiCol_DockingPreview] = ImVec4{ 0.44f, 0.37f, 0.61f, 1.0f };
+}
 
+void SetupStyle()
+{
     auto& style = ImGui::GetStyle();
     style.TabRounding = 4;
     style.ScrollbarRounding = 9;
@@ -84,4 +86,13 @@ void ImguiStyles::SetupEditorStyle()
     style.FrameRounding = 3;
     style.PopupRounding = 4;
     style.ChildRounding = 4;
+    style.SeparatorTextBorderSize = 1;
+    style.FramePadding = ImVec2(4, 5);
+}
+
+void ImguiStyles::SetupEditorStyle()
+{
+    SetupFont();
+    SetupColors();
+    SetupStyle();
 }
