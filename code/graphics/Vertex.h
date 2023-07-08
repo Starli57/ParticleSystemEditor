@@ -2,12 +2,12 @@
 
 namespace Graphics
 {
-	struct vertex
+	struct Vertex
 	{
 	public:
 		float position[3];
 
-		vertex SetPosition(float x, float y, float z) 
+		Vertex SetPosition(float x, float y, float z) 
 		{
 			position[0] = x;
 			position[1] = y;

@@ -1,12 +1,12 @@
 
 *Code design
-**make MeshRenderer component
+**Separate MeshRenderer component
 
 *Optimization
 **Render Instancing for particles
 
 *Editor
-**Make a custom style for editor
+**Different configurations presets, ability to save and load a preset
 
 *Particle system
 **Setup max number of particles
@@ -23,7 +23,6 @@
 
 *Camera
 **Add camera entity
-**Move camera by keyboard arrows
 **Rotate camera
 **Zoom
 

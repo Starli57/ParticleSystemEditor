@@ -31,7 +31,7 @@ AppRuntime::AppRuntime()
 #endif
     glfwWindowHint(GLFW_SAMPLES, 4);
 
-    window = glfwCreateWindow(800, 800, "Particle System", nullptr, nullptr);
+    window = glfwCreateWindow(1000, 1000, "Particle System", nullptr, nullptr);
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);

@@ -4,9 +4,9 @@
 
 namespace Graphics
 {
-	struct triangle
+	struct Triangle
 	{
 	public:
-		vertex verts[3];
+		Vertex verts[3];
 	};
 }

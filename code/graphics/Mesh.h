@@ -9,6 +9,6 @@ namespace Graphics
 	struct mesh
 	{
 	public:
-		std::vector<triangle> triangles;
+		std::vector<Triangle> triangles;
 	};
 }
