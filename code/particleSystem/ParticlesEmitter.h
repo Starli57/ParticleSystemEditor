@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../particleSystem/particle/ParticleSettings.h"
+#include "../particleSystem/ParticleSettings.h"
 #include "../particleSystem/particle/Particle.h"
 
 namespace ParticleSystemEditor

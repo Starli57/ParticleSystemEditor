@@ -1,11 +1,14 @@
 #include "StatusDisplay.h"
 
-void StatusDisplay::Render()
+namespace ParticleSystemEditor
 {
-    ImGui::Begin("Status Display");
+    void StatusDisplay::Render()
+    {
+        ImGui::Begin("Status Display");
 
-    ImGuiIO io = ImGui::GetIO();
-    ImGui::Text("FPS: %.1f", io.Framerate);
+        ImGuiIO io = ImGui::GetIO();
+        ImGui::Text("FPS: %.1f", io.Framerate);
 
-    ImGui::End();
+        ImGui::End();
+    }
 }

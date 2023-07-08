@@ -1,4 +1,4 @@
-#include "../code/particleSystem/particle/ParticleSettings.h"
+#include "../code/particleSystem/ParticleSettings.h"
 
 ParticleSettings::ParticleSettings() 
 {

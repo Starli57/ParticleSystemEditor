@@ -3,7 +3,7 @@
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>
 
-#include "ParticleSettings.h"
+#include "../code/particleSystem/ParticleSettings.h"
 #include "../code/graphics/shaders/Shader.h"
 #include "../shaders/ShadersList.h"
 
