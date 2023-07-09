@@ -4,7 +4,7 @@
 #include <vector>
 #include "triangle.h"
 
-namespace Graphics
+namespace Rendering
 {
 	struct Mesh
 	{

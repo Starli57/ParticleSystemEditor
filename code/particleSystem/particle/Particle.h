@@ -4,7 +4,7 @@
 #include <GLFW/glfw3.h>
 
 #include "../code/particleSystem/ParticleSettings.h"
-#include "../code/graphics/shaders/Shader.h"
+#include "../code/rendering/shaders/Shader.h"
 #include "../shaders/ShadersList.h"
 
 #include "../code/utility/random/Random.h"
@@ -37,7 +37,7 @@ namespace ParticleSystemEditor
 	private:
 
 		ParticleSettings* _settings;
-		Graphics::Shader* _shader;
+		Rendering::Shader* _shader;
 
 		glm::vec3 _position;
 		glm::vec3 _velocity;

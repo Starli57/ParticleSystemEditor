@@ -139,18 +139,18 @@
     <ClCompile Include="code\application\Scene.cpp" />
     <ClCompile Include="code\particleSystem\ParticleSettings.cpp" />
     <ClCompile Include="code\utility\di\Di.cpp" />
-    <ClCompile Include="code\application\Editor.cpp" />
-    <ClCompile Include="code\windows\inspector\Inspector.cpp" />
+    <ClCompile Include="code\editor\Editor.cpp" />
+    <ClCompile Include="code\editor\windows\inspector\Inspector.cpp" />
     <ClCompile Include="code\particleSystem\particle\Particle.cpp" />
     <ClCompile Include="code\particleSystem\ParticleSystem.cpp" />
-    <ClCompile Include="code\windows\statusDisplay\StatusDisplay.cpp" />
-    <ClCompile Include="code\ImguiStyles.cpp" />
+    <ClCompile Include="code\editor\windows\statusDisplay\StatusDisplay.cpp" />
+    <ClCompile Include="code\utility\ImguiStyles.cpp" />
     <ClCompile Include="libs\glad\src\glad.c" />
     <ClCompile Include="code\logging\Logger.cpp" />
-    <ClCompile Include="code\windows\console\LogConsole.cpp" />
+    <ClCompile Include="code\editor\windows\console\LogConsole.cpp" />
     <ClCompile Include="code\utility\random\Random.cpp" />
     <ClCompile Include="code\utility\reactValue\ReactValue.cpp" />
-    <ClCompile Include="code\graphics\shaders\Shader.cpp" />
+    <ClCompile Include="code\rendering\shaders\Shader.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="libs\imgui\imgui.cpp" />
     <ClCompile Include="libs\imgui\imgui_demo.cpp" />
@@ -161,21 +161,21 @@
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="code\utility\time\Time.cpp" />
     <ClCompile Include="code\particleSystem\ParticlesEmitter.cpp" />
-    <ClCompile Include="code\windows\presetsWindow\PresetsWindow.cpp" />
+    <ClCompile Include="code\editor\windows\presetsWindow\PresetsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="code\application\Application.h" />
     <ClInclude Include="code\application\Scene.h" />
     <ClInclude Include="code\application\AppRuntime.h" />
     <ClInclude Include="code\utility\di\Di.h" />
-    <ClInclude Include="code\application\Editor.h" />
-    <ClInclude Include="code\windows\inspector\Inspector.h" />
+    <ClInclude Include="code\editor\Editor.h" />
+    <ClInclude Include="code\editor\windows\inspector\Inspector.h" />
     <ClInclude Include="code\utility\math\Math.h" />
     <ClInclude Include="code\particleSystem\particle\Particle.h" />
     <ClInclude Include="code\particleSystem\ParticleSettings.h" />
     <ClInclude Include="code\particleSystem\ParticleSystem.h" />
-    <ClInclude Include="code\windows\statusDisplay\StatusDisplay.h" />
-    <ClInclude Include="code\ImguiStyles.h" />
+    <ClInclude Include="code\editor\windows\statusDisplay\StatusDisplay.h" />
+    <ClInclude Include="code\utility\ImguiStyles.h" />
     <ClInclude Include="libs\imgui\imconfig.h" />
     <ClInclude Include="libs\imgui\imgui.h" />
     <ClInclude Include="libs\imgui\imgui_impl_glfw.h" />
@@ -186,17 +186,17 @@
     <ClInclude Include="libs\imgui\imstb_textedit.h" />
     <ClInclude Include="libs\imgui\imstb_truetype.h" />
     <ClInclude Include="code\logging\Logger.h" />
-    <ClInclude Include="code\windows\console\LogConsole.h" />
-    <ClInclude Include="code\graphics\Mesh.h" />
+    <ClInclude Include="code\editor\windows\console\LogConsole.h" />
+    <ClInclude Include="code\rendering\Mesh.h" />
     <ClInclude Include="code\utility\random\Random.h" />
     <ClInclude Include="code\utility\reactValue\ReactValue.h" />
-    <ClInclude Include="code\graphics\shaders\Shader.h" />
+    <ClInclude Include="code\rendering\shaders\Shader.h" />
     <ClInclude Include="code\particleSystem\ParticlesEmitter.h" />
-    <ClInclude Include="code\windows\presetsWindow\PresetsWindow.h" />
+    <ClInclude Include="code\editor\windows\presetsWindow\PresetsWindow.h" />
     <ClInclude Include="shaders\ShadersList.h" />
     <ClInclude Include="code\utility\time\Time.h" />
-    <ClInclude Include="code\graphics\Triangle.h" />
-    <ClInclude Include="code\graphics\Vertex.h" />
+    <ClInclude Include="code\rendering\Triangle.h" />
+    <ClInclude Include="code\rendering\Vertex.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\Default.vert" />

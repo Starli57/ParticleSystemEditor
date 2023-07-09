@@ -1,6 +1,6 @@
 #include "Shader.h"
 
-namespace Graphics
+namespace Rendering
 {
 
     #define MLogger Utilities::DI::Get<Logging::Logger>()

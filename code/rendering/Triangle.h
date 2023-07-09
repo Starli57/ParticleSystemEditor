@@ -2,7 +2,7 @@
 
 #include "vertex.h"
 
-namespace Graphics
+namespace Rendering
 {
 	struct Triangle
 	{

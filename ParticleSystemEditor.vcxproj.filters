@@ -88,7 +88,7 @@
       <Filter>ThirdParty\ImGuiGlfw\Source</Filter>
     </ClCompile>
     <ClCompile Include="main.cpp" />
-    <ClCompile Include="code\graphics\shaders\Shader.cpp">
+    <ClCompile Include="code\rendering\shaders\Shader.cpp">
       <Filter>Code\Graphics\Shader</Filter>
     </ClCompile>
     <ClCompile Include="libs\glad\src\glad.c">
@@ -106,7 +106,7 @@
     <ClCompile Include="code\utility\reactValue\ReactValue.cpp">
       <Filter>Code\Utility\ReactValue</Filter>
     </ClCompile>
-    <ClCompile Include="code\windows\console\LogConsole.cpp">
+    <ClCompile Include="code\editor\windows\console\LogConsole.cpp">
       <Filter>Code\Windows\LogConsole</Filter>
     </ClCompile>
     <ClCompile Include="code\utility\time\Time.cpp">
@@ -115,7 +115,7 @@
     <ClCompile Include="code\utility\random\Random.cpp">
       <Filter>Code\Utility\Random</Filter>
     </ClCompile>
-    <ClCompile Include="code\windows\inspector\Inspector.cpp">
+    <ClCompile Include="code\editor\windows\inspector\Inspector.cpp">
       <Filter>Code\Windows\Inspector</Filter>
     </ClCompile>
     <ClCompile Include="code\particleSystem\particle\Particle.cpp">
@@ -127,17 +127,17 @@
     <ClCompile Include="code\application\Scene.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="code\application\Editor.cpp">
+    <ClCompile Include="code\editor\Editor.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
     <ClCompile Include="code\application\AppRuntime.cpp">
       <Filter>Code\Application</Filter>
     </ClCompile>
-    <ClCompile Include="code\windows\statusDisplay\StatusDisplay.cpp" />
-    <ClCompile Include="code\ImguiStyles.cpp" />
+    <ClCompile Include="code\editor\windows\statusDisplay\StatusDisplay.cpp" />
+    <ClCompile Include="code\utility\ImguiStyles.cpp" />
     <ClCompile Include="code\particleSystem\ParticlesEmitter.cpp" />
     <ClCompile Include="code\particleSystem\ParticleSettings.cpp" />
-    <ClCompile Include="code\windows\presetsWindow\PresetsWindow.cpp" />
+    <ClCompile Include="code\editor\windows\presetsWindow\PresetsWindow.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="libs\imgui\imconfig.h">
@@ -167,16 +167,16 @@
     <ClInclude Include="libs\imgui\imgui_impl_opengl3_loader.h">
       <Filter>ThirdParty\ImGuiGlfw\Headers</Filter>
     </ClInclude>
-    <ClInclude Include="code\graphics\Vertex.h">
+    <ClInclude Include="code\rendering\Vertex.h">
       <Filter>Code\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="code\graphics\Triangle.h">
+    <ClInclude Include="code\rendering\Triangle.h">
       <Filter>Code\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="code\graphics\Mesh.h">
+    <ClInclude Include="code\rendering\Mesh.h">
       <Filter>Code\Graphics</Filter>
     </ClInclude>
-    <ClInclude Include="code\graphics\shaders\Shader.h">
+    <ClInclude Include="code\rendering\shaders\Shader.h">
       <Filter>Code\Graphics\Shader</Filter>
     </ClInclude>
     <ClInclude Include="code\logging\Logger.h">
@@ -191,7 +191,7 @@
     <ClInclude Include="code\utility\reactValue\ReactValue.h">
       <Filter>Code\Utility\ReactValue</Filter>
     </ClInclude>
-    <ClInclude Include="code\windows\console\LogConsole.h">
+    <ClInclude Include="code\editor\windows\console\LogConsole.h">
       <Filter>Code\Windows\LogConsole</Filter>
     </ClInclude>
     <ClInclude Include="shaders\ShadersList.h">
@@ -203,7 +203,7 @@
     <ClInclude Include="code\utility\random\Random.h">
       <Filter>Code\Utility\Random</Filter>
     </ClInclude>
-    <ClInclude Include="code\windows\inspector\Inspector.h">
+    <ClInclude Include="code\editor\windows\inspector\Inspector.h">
       <Filter>Code\Windows\Inspector</Filter>
     </ClInclude>
     <ClInclude Include="code\particleSystem\particle\Particle.h">
@@ -221,16 +221,16 @@
     <ClInclude Include="code\application\Application.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="code\application\Editor.h">
+    <ClInclude Include="code\editor\Editor.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
     <ClInclude Include="code\application\Scene.h">
       <Filter>Code\Application</Filter>
     </ClInclude>
-    <ClInclude Include="code\windows\statusDisplay\StatusDisplay.h" />
-    <ClInclude Include="code\ImguiStyles.h" />
+    <ClInclude Include="code\editor\windows\statusDisplay\StatusDisplay.h" />
+    <ClInclude Include="code\utility\ImguiStyles.h" />
     <ClInclude Include="code\particleSystem\ParticlesEmitter.h" />
-    <ClInclude Include="code\windows\presetsWindow\PresetsWindow.h" />
+    <ClInclude Include="code\editor\windows\presetsWindow\PresetsWindow.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\Default.vert">

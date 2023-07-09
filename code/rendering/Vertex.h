@@ -1,6 +1,6 @@
 #pragma once
 
-namespace Graphics
+namespace Rendering
 {
 	struct Vertex
 	{

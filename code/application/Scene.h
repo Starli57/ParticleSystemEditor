@@ -5,8 +5,8 @@
 #include <ctime>   
 
 #include "../code/particleSystem/ParticleSystem.h"
+#include "../code/editor/windows/console/LogConsole.h"
 #include "../code/utility/di/Di.h"
-#include "../code/windows/console/LogConsole.h"
 #include "../code/utility/time/Time.h"
 
 using namespace ParticleSystemEditor;
