@@ -10,6 +10,7 @@
 #include "../code/utility/random/Random.h"
 #include "../code/utility/time/Time.h"
 #include "../code/utility/math/Math.h"
+#include "../../settings/ScreenSettings.h"
 
 #include <glm/glm.hpp>
 #include <glm/gtc/matrix_transform.hpp>

@@ -2,17 +2,24 @@
 
 #include "AppRuntime.h"
 #define MLogger Utilities::DI::Get<Logging::Logger>()
+#define Screen Utilities::DI::Get<ScreenSettings>()
 
-void glfw_error_callback(int error, const char* description)
+void OnGLFWError(int error, const char* description)
 {
     MLogger->Log("GLFW Error description: " + std::string(description));
+}
+
+void OnWindowResized(GLFWwindow* window, int width, int height)
+{
+    Screen->SetScreenHeight(height);
+    Screen->SetScreenWidth(width);
 }
 
 AppRuntime::AppRuntime()
 {
     application = new Application();
 
-    glfwSetErrorCallback(glfw_error_callback);
+    glfwSetErrorCallback(OnGLFWError);
     glfwInit();
 
     std::string glslVersion = "";
@@ -31,7 +38,14 @@ AppRuntime::AppRuntime()
 #endif
     glfwWindowHint(GLFW_SAMPLES, 4);
 
-    window = glfwCreateWindow(1000, 1000, "Particle System", nullptr, nullptr);
+    std::shared_ptr <ScreenSettings> screenSettings = std::make_shared<ScreenSettings>();
+    Utilities::DI::Register(screenSettings);
+
+    window = glfwCreateWindow(
+        screenSettings->GetScreenWidth(), screenSettings->GetScreenHeight(),
+        "Particle System", nullptr, nullptr);
+
+    glfwSetWindowSizeCallback(window, OnWindowResized);
 
     glfwMakeContextCurrent(window);
     glfwSwapInterval(1);

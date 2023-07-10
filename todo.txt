@@ -18,13 +18,7 @@
 **Particle sprite
 
 *Render
-**Fix objects transformations dependent on screen size
 **Render the closest objects first (for correct blending)
-
-*Camera
-**Add camera entity
-**Rotate camera
-**Zoom
 
 *Other
 **Set target FPS

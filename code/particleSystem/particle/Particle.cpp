@@ -6,6 +6,7 @@ namespace ParticleSystemEditor
 {
 	#define timer Utilities::DI::Get<Time>()
 	#define rand Utilities::DI::Get<Random>()
+	#define screen Utilities::DI::Get<ScreenSettings>()
 
 	Particle::Particle(ParticleSettings* settings)
 	{
@@ -16,8 +17,6 @@ namespace ParticleSystemEditor
 
 		_shader = new Rendering::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
 		_shader->Use();
-
-		SetupProjectionMatrix();
 	}
 
 	Particle::~Particle() 
@@ -116,24 +115,28 @@ namespace ParticleSystemEditor
 			2, 3, 0
 		};
 
-		unsigned int VAO, VBO, EBO;
-		glGenVertexArrays(1, &VAO);
-		glGenBuffers(1, &VBO);
-		glGenBuffers(1, &EBO);
+		unsigned int vao, vbo, ibo;
+		glGenVertexArrays(1, &vao);
+		glGenBuffers(1, &vbo);
+		glGenBuffers(1, &ibo);
 
-		glBindVertexArray(VAO);
-
-		glBindBuffer(GL_ARRAY_BUFFER, VBO);
+		glBindVertexArray(vao);
+		glBindBuffer(GL_ARRAY_BUFFER, vbo);
 		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexes), vertexes, GL_STATIC_DRAW);
 
-		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
 
+		//data layout
+		//1st -> index
+		//2nd -> number of components (coordinates, like x y z w)
+		//5th -> stride[bytes]: offset between vertexes (if 1 vertex has 3 elements - offset must be 3 * sizeof(type)) 
+		//6th -> offset[bytes] to the initial element (if vertex has position and colors and you need to take colors)
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
 
-		// create transformations
-		glm::mat4 view = glm::mat4(1.0f); // make sure to initialize matrix to identity matrix first
+		SetupProjectionMatrix();
+		glm::mat4 view = glm::mat4(1.0f); 
 		view = glm::translate(view, _position);
 		view = glm::rotate(view, _rotation, _settings->rotationVector);
 		view = glm::scale(view, Math::Lerp(_settings->startScale, _settings->endScale, GetLifetimeAspect()));
@@ -146,20 +149,20 @@ namespace ParticleSystemEditor
 		_shader->setMat4("model", model);
 		_shader->setVec4("inColor", color);
 
-		glBindVertexArray(VAO);
+		glBindVertexArray(vao);
 		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
 
-		glDeleteVertexArrays(1, &VAO);
-		glDeleteBuffers(1, &VBO);
-		glDeleteBuffers(1, &EBO);
+		glDeleteVertexArrays(1, &vao);
+		glDeleteBuffers(1, &vbo);
+		glDeleteBuffers(1, &ibo);
 	}
 
 	void Particle::SetupProjectionMatrix()
 	{
-		float widthHeightAspect = 1;//todo: calculate real aspect
+		float screenAspect = screen->GetScreenAspect();
 
 		glm::mat4 projection = glm::mat4(1.0f);
-		projection = glm::perspective(glm::radians(90.0f), widthHeightAspect, 0.1f, 1000.0f);
+		projection = glm::perspective(glm::radians(90.0f), screenAspect, 0.1f, 1000.0f);
 		_shader->setMat4("projection", projection);
 	}
 

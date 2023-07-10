@@ -11,6 +11,7 @@
 #include "../utility/di/Di.h"
 #include "../utility/time/Time.h"
 #include "../utility/ImguiStyles.h"
+#include "../settings/ScreenSettings.h"
 
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>

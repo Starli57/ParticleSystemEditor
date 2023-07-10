@@ -167,6 +167,7 @@
     <ClInclude Include="code\application\Application.h" />
     <ClInclude Include="code\application\Scene.h" />
     <ClInclude Include="code\application\AppRuntime.h" />
+    <ClInclude Include="code\settings\ScreenSettings.h" />
     <ClInclude Include="code\utility\di\Di.h" />
     <ClInclude Include="code\editor\Editor.h" />
     <ClInclude Include="code\editor\windows\inspector\Inspector.h" />

@@ -231,6 +231,7 @@
     <ClInclude Include="code\utility\ImguiStyles.h" />
     <ClInclude Include="code\particleSystem\ParticlesEmitter.h" />
     <ClInclude Include="code\editor\windows\presetsWindow\PresetsWindow.h" />
+    <ClInclude Include="code\settings\ScreenSettings.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="shaders\Default.vert">
