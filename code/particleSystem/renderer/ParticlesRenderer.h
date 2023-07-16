@@ -1,7 +1,16 @@
 #pragma once
 
+#include <glad/glad.h> 
+#include <GLFW/glfw3.h>
+
 #include "../ParticleSettings.h"
 #include "../particle/Particle.h"
+
+#include "../../settings/ScreenSettings.h"
+
+#include <glm/glm.hpp>
+#include <glm/gtc/matrix_transform.hpp>
+#include <glm/gtc/type_ptr.hpp>
 
 namespace ParticleSystemEditor
 {
@@ -17,5 +26,6 @@ namespace ParticleSystemEditor
 
 	private:
 		ParticleSettings* settings;
+		Rendering::Shader* shader;
 	};
 }

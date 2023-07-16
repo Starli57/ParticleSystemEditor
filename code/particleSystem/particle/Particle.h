@@ -22,6 +22,11 @@ namespace ParticleSystemEditor
 	class Particle
 	{
 	public:
+		glm::vec3 GetPosition() { return _position; }
+		float GetRotation() { return _rotation; }
+
+		float GetLifetimeAspect();
+		bool GetIsVisible();
 
 		Particle(ParticleSettings* particleSettings);
 		~Particle();
@@ -33,8 +38,6 @@ namespace ParticleSystemEditor
 		void Update();
 		void Render();
 
-		bool GetIsVisible();
-		float GetLifetimeAspect();
 
 	private:
 
