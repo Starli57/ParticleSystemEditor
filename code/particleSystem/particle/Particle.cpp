@@ -99,21 +99,27 @@ namespace ParticleSystemEditor
 			return;
 		}
 
+		const int squads = 1;
 
-		float vertexes[] =
+		Rendering::Vertex vertexes[squads * 4];
+		uint32_t indices[squads * 6];
+
+		for (int i = 0; i < squads; i++)
 		{
-		//   positions
-		//   x      y      z
-			-0.5f, -0.5f,  0,
-			-0.5f,  0.5f,  0,
-			 0.5f,  0.5f,  0,
-			 0.5f, -0.5f,  0
-		};
+			int vi = i * 4;
+			vertexes[vi].position = glm::vec3(-0.5f, -0.5f, 0);
+			vertexes[vi + 1].position = glm::vec3(-0.5f, 0.5f, 0);
+			vertexes[vi + 2].position = glm::vec3(0.5f, 0.5f, 0);
+			vertexes[vi + 3].position = glm::vec3(0.5f, -0.5f, 0);
 
-		uint32_t indices[] = {
-			0, 1, 2,
-			2, 3, 0
-		};
+			int ii = i * 6;
+			indices[ii] = vi;
+			indices[ii + 1] = vi + 1;
+			indices[ii + 2] = vi + 2;
+			indices[ii + 3] = vi + 2;
+			indices[ii + 4] = vi + 3;
+			indices[ii + 5] = vi;
+		}
 
 		unsigned int vao, vbo, ibo;
 		glGenVertexArrays(1, &vao);

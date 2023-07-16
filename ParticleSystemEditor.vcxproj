@@ -188,7 +188,6 @@
     <ClInclude Include="libs\imgui\imstb_truetype.h" />
     <ClInclude Include="code\logging\Logger.h" />
     <ClInclude Include="code\editor\windows\console\LogConsole.h" />
-    <ClInclude Include="code\rendering\Mesh.h" />
     <ClInclude Include="code\utility\random\Random.h" />
     <ClInclude Include="code\utility\reactValue\ReactValue.h" />
     <ClInclude Include="code\rendering\shaders\Shader.h" />
@@ -196,7 +195,6 @@
     <ClInclude Include="code\editor\windows\presetsWindow\PresetsWindow.h" />
     <ClInclude Include="shaders\ShadersList.h" />
     <ClInclude Include="code\utility\time\Time.h" />
-    <ClInclude Include="code\rendering\Triangle.h" />
     <ClInclude Include="code\rendering\Vertex.h" />
   </ItemGroup>
   <ItemGroup>

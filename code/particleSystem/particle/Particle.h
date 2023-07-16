@@ -5,6 +5,7 @@
 
 #include "../code/particleSystem/ParticleSettings.h"
 #include "../code/rendering/shaders/Shader.h"
+#include "../code/rendering/Vertex.h"
 #include "../shaders/ShadersList.h"
 
 #include "../code/utility/random/Random.h"
