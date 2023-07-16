@@ -21,16 +21,18 @@ namespace ParticleSystemEditor
 		}
 
 		emitter = new ParticlesEmitter(settings, particles);
+		renderer = new ParticlesRenderer(settings, particles);
 	}
 
 	ParticleSystem::~ParticleSystem()
 	{
+		delete renderer;
+		delete emitter;
 		for (Particle* particle : *particles)
 		{
 			delete particle;
 		}
 		delete particles;
-		delete emitter;
 		delete settings;
 	}
 
@@ -42,10 +44,7 @@ namespace ParticleSystemEditor
 
 	void ParticleSystem::Render()
 	{
-		for (Particle* particle : *particles)
-		{
-			particle->Render();
-		}
+		renderer->Render();
 	}
 
 	void ParticleSystem::UpdateParticles()

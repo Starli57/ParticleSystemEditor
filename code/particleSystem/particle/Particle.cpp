@@ -128,7 +128,7 @@ namespace ParticleSystemEditor
 
 		glBindVertexArray(vao);
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexes), vertexes, GL_STATIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexes), vertexes, GL_DYNAMIC_DRAW);
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
 		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
@@ -141,7 +141,11 @@ namespace ParticleSystemEditor
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
 		glEnableVertexAttribArray(0);
 
-		SetupProjectionMatrix();
+		float screenAspect = screen->GetScreenAspect();
+
+		glm::mat4 projection = glm::mat4(1.0f);
+		projection = glm::perspective(glm::radians(90.0f), screenAspect, 0.1f, 1000.0f);
+
 		glm::mat4 view = glm::mat4(1.0f); 
 		glm::mat4 model = glm::mat4(1.0f);
 		model = glm::translate(model, _position);
@@ -150,25 +154,17 @@ namespace ParticleSystemEditor
 
 		glm::vec4 color = Math::Lerp(_settings->startColor, _settings->endColor, GetLifetimeAspect());
 
+		_shader->setMat4("projection", projection);
 		_shader->setMat4("view", view);
 		_shader->setMat4("model", model);
 		_shader->setVec4("inColor", color);
 
 		glBindVertexArray(vao);
-		glDrawElements(GL_TRIANGLES, 6, GL_UNSIGNED_INT, 0);
+		glDrawElements(GL_TRIANGLES, squads * 6, GL_UNSIGNED_INT, 0);
 
 		glDeleteVertexArrays(1, &vao);
 		glDeleteBuffers(1, &vbo);
 		glDeleteBuffers(1, &ibo);
-	}
-
-	void Particle::SetupProjectionMatrix()
-	{
-		float screenAspect = screen->GetScreenAspect();
-
-		glm::mat4 projection = glm::mat4(1.0f);
-		projection = glm::perspective(glm::radians(90.0f), screenAspect, 0.1f, 1000.0f);
-		_shader->setMat4("projection", projection);
 	}
 
 	bool Particle::GetIsVisible()
