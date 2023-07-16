@@ -143,11 +143,10 @@ namespace ParticleSystemEditor
 
 		SetupProjectionMatrix();
 		glm::mat4 view = glm::mat4(1.0f); 
-		view = glm::translate(view, _position);
-		view = glm::rotate(view, _rotation, _settings->rotationVector);
-		view = glm::scale(view, Math::Lerp(_settings->startScale, _settings->endScale, GetLifetimeAspect()));
 		glm::mat4 model = glm::mat4(1.0f);
-		model = glm::translate(model, glm::vec3(0, 0, 0));
+		model = glm::translate(model, _position);
+		model = glm::rotate(model, _rotation, _settings->rotationVector);
+		model = glm::scale(model, Math::Lerp(_settings->startScale, _settings->endScale, GetLifetimeAspect()));
 
 		glm::vec4 color = Math::Lerp(_settings->startColor, _settings->endColor, GetLifetimeAspect());
 
