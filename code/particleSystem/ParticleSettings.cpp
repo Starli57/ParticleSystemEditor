@@ -2,26 +2,26 @@
 
 ParticleSettings::ParticleSettings() 
 {
-	emissionPosition = glm::vec3(0, 0, -3);
+	emissionPosition = glm::vec3(0, 0, -250);
 	emissionRadius = glm::vec3(0, 0, 0);
-	particlesPerEmission = 100;
-	emissionPeriod = 5;
+	particlesPerEmission = 500;
+	emissionPeriod = 1;
 
-	direction = glm::vec3(0, 0, -1);
-	directionNoise = glm::vec3(1, 0.4f, 0.25f);
+	direction = glm::vec3(0, 0, 5);
+	directionNoise = glm::vec3(1, 1, 2);
 
 	rotationVector = glm::vec3(1, 1, 1);
 	minRotation = -2;
 	maxRotation = 2;
 
-	minVelocity = 1;
-	maxVelocity = 7;
-	velocityDamping = 0.0001f;
+	minVelocity = 10;
+	maxVelocity = 30;
+	velocityDamping = 0.01f;
 
 	startScale = glm::vec3(1, 1, 1);
 	endScale = glm::vec3(0, 0, 0);
 
-	minLifetime = 1;
+	minLifetime = 3;
 	maxLifetime = 7;
 
 	startColor = glm::vec4(1.0f, 0.5f, 0.2f, 1.0f);

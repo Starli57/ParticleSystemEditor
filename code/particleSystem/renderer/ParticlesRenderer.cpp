@@ -13,26 +13,12 @@ namespace ParticleSystemEditor
 		this->settings = settings;
 		this->particles = particles;
 
+		const int squads = maxParticles;
+
 		vao = vbo = ibo = 0;
 
-		shader = new Rendering::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
-		shader->Use();
-	}
-
-	ParticlesRenderer::~ParticlesRenderer()
-	{
-		glDeleteVertexArrays(1, &vao);
-		glDeleteBuffers(1, &vbo);
-		glDeleteBuffers(1, &ibo);
-
-		delete shader;
-	}
-
-	void ParticlesRenderer::Render()
-	{
-		const int squads = maxParticles;
-		Rendering::Vertex vertexes[squads * 4];
-		uint32_t indices[squads * 6];
+		vertexes = new Rendering::Vertex[squads * 4];
+		indices = new uint32_t[squads * 6];
 
 		for (int i = 0; i < squads; i++)
 		{
@@ -50,6 +36,26 @@ namespace ParticleSystemEditor
 			indices[ii + 4] = vi + 3;
 			indices[ii + 5] = vi;
 		}
+
+
+		shader = new Rendering::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
+		shader->Use();
+	}
+
+	ParticlesRenderer::~ParticlesRenderer()
+	{
+		glDeleteVertexArrays(1, &vao);
+		glDeleteBuffers(1, &vbo);
+		glDeleteBuffers(1, &ibo);
+
+		delete shader;
+		delete[] indices;
+		delete[] vertexes;
+	}
+
+	void ParticlesRenderer::Render()
+	{
+		const int squads = maxParticles;
 
 		for (int i = 0; i < squads; i++)
 		{
@@ -76,10 +82,10 @@ namespace ParticleSystemEditor
 
 		glBindVertexArray(vao);
 		glBindBuffer(GL_ARRAY_BUFFER, vbo);
-		glBufferData(GL_ARRAY_BUFFER, sizeof(vertexes), vertexes, GL_DYNAMIC_DRAW);
+		glBufferData(GL_ARRAY_BUFFER, squads * 4 * sizeof(Vertex), vertexes, GL_DYNAMIC_DRAW);
 
 		glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, ibo);
-		glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
+		glBufferData(GL_ELEMENT_ARRAY_BUFFER, squads * 6 * sizeof(uint32_t), indices, GL_STATIC_DRAW);
 
 		//data layout
 		//1st -> index
