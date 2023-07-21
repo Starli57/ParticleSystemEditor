@@ -12,6 +12,7 @@
 
 #include "ParticlesEmitter.h"
 #include "particle/Particle.h"
+#include "renderer/ParticlesRenderer.h"
 
 namespace ParticleSystemEditor
 {
@@ -31,6 +32,7 @@ namespace ParticleSystemEditor
 	private:
 		ParticleSettings* settings;
 		ParticlesEmitter* emitter;
+		ParticlesRenderer* renderer;
 
 		void UpdateParticles();
 	};

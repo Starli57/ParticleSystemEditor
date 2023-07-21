@@ -11,26 +11,27 @@ namespace ParticleSystemEditor
 	{
 		settings = new ParticleSettings();
 
-		int particlesLimit = 2500;
 		particles = new std::vector<Particle*>();
-		particles->reserve(particlesLimit);
+		particles->reserve(maxParticles);
 
-		for (int i = 0; i < particlesLimit; i++)
+		for (int i = 0; i < maxParticles; i++)
 		{
 			particles->push_back(new Particle(settings));
 		}
 
 		emitter = new ParticlesEmitter(settings, particles);
+		renderer = new ParticlesRenderer(settings, particles);
 	}
 
 	ParticleSystem::~ParticleSystem()
 	{
+		delete renderer;
+		delete emitter;
 		for (Particle* particle : *particles)
 		{
 			delete particle;
 		}
 		delete particles;
-		delete emitter;
 		delete settings;
 	}
 
@@ -42,10 +43,7 @@ namespace ParticleSystemEditor
 
 	void ParticleSystem::Render()
 	{
-		for (Particle* particle : *particles)
-		{
-			particle->Render();
-		}
+		renderer->Render();
 	}
 
 	void ParticleSystem::UpdateParticles()

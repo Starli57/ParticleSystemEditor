@@ -5,6 +5,7 @@
 
 #include "../code/particleSystem/ParticleSettings.h"
 #include "../code/rendering/shaders/Shader.h"
+#include "../code/rendering/Vertex.h"
 #include "../shaders/ShadersList.h"
 
 #include "../code/utility/random/Random.h"
@@ -21,6 +22,11 @@ namespace ParticleSystemEditor
 	class Particle
 	{
 	public:
+		glm::vec3 GetPosition() { return _position; }
+		float GetRotation() { return _rotation; }
+
+		float GetLifetimeAspect();
+		bool GetIsVisible();
 
 		Particle(ParticleSettings* particleSettings);
 		~Particle();
@@ -30,15 +36,11 @@ namespace ParticleSystemEditor
 		void Deactivate();
 
 		void Update();
-		void Render();
 
-		bool GetIsVisible();
-		float GetLifetimeAspect();
 
 	private:
 
 		ParticleSettings* _settings;
-		Rendering::Shader* _shader;
 
 		glm::vec3 _position;
 		glm::vec3 _velocity;
@@ -48,9 +50,6 @@ namespace ParticleSystemEditor
 
 		float _lifetime;
 		float _lifetimeLimit;
-
-
-		void SetupProjectionMatrix();
 
 		void UpdatePosition();
 		void UpdateVelocity();
