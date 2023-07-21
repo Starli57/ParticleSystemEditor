@@ -36,13 +36,11 @@ namespace ParticleSystemEditor
 		void Deactivate();
 
 		void Update();
-		void Render();
 
 
 	private:
 
 		ParticleSettings* _settings;
-		Rendering::Shader* _shader;
 
 		glm::vec3 _position;
 		glm::vec3 _velocity;
@@ -52,9 +50,6 @@ namespace ParticleSystemEditor
 
 		float _lifetime;
 		float _lifetimeLimit;
-
-
-		void SetupProjectionMatrix();
 
 		void UpdatePosition();
 		void UpdateVelocity();

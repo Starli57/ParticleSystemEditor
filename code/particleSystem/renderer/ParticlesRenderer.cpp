@@ -30,9 +30,7 @@ namespace ParticleSystemEditor
 
 	void ParticlesRenderer::Render()
 	{
-
-		const int squads = 1000;
-
+		const int squads = maxParticles;
 		Rendering::Vertex vertexes[squads * 4];
 		uint32_t indices[squads * 6];
 
@@ -53,31 +51,22 @@ namespace ParticleSystemEditor
 			indices[ii + 5] = vi;
 		}
 
-		glm::mat4 models[squads];
-		glm::vec4 colors[squads];
 		for (int i = 0; i < squads; i++)
 		{
 			Particle* particle = particles->at(i);
 
-			models[i] = glm::mat4(1.0f);
-			models[i] = glm::translate(models[i], particle->GetPosition());
-			models[i] = glm::rotate(models[i], particle->GetRotation(), settings->rotationVector);
-			models[i] = glm::scale(models[i], Math::Lerp(settings->startScale, settings->endScale, particle->GetLifetimeAspect()));
+			glm::mat4 model = glm::mat4(1.0f);
+			model = glm::translate(model, particle->GetPosition());
+			model = glm::rotate(model, particle->GetRotation(), settings->rotationVector);
+			model = glm::scale(model, Math::Lerp(settings->startScale, settings->endScale, particle->GetLifetimeAspect()));
 
-			colors[i] = Math::Lerp(settings->startColor, settings->endColor, particle->GetLifetimeAspect());
-		}
+			glm::vec4 color = Math::Lerp(settings->startColor, settings->endColor, particle->GetLifetimeAspect());
 
-		for (int i = 0; i < squads; i++)
-		{
-			vertexes[i * 4].model = models[i];
-			vertexes[i * 4 + 1].model = models[i];
-			vertexes[i * 4 + 2].model = models[i];
-			vertexes[i * 4 + 3].model = models[i];
-			
-			vertexes[i * 4].color = colors[i];
-			vertexes[i * 4 + 1].color = colors[i];
-			vertexes[i * 4 + 2].color = colors[i];
-			vertexes[i * 4 + 3].color = colors[i];
+			for (int j = 0; j < 4; j++) 
+			{
+				vertexes[i * 4 + j].model = model;
+				vertexes[i * 4 + j].color = color;
+			}
 		}
 
 		vao = vbo = ibo = 0;

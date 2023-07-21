@@ -2,6 +2,8 @@
 #include <glm/vec3.hpp>
 #include <glm/vec4.hpp>
 
+const int maxParticles = 1000;
+
 struct ParticleSettings
 {
 	ParticleSettings();

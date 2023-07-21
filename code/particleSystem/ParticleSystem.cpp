@@ -11,11 +11,10 @@ namespace ParticleSystemEditor
 	{
 		settings = new ParticleSettings();
 
-		int particlesLimit = 1000;
 		particles = new std::vector<Particle*>();
-		particles->reserve(particlesLimit);
+		particles->reserve(maxParticles);
 
-		for (int i = 0; i < particlesLimit; i++)
+		for (int i = 0; i < maxParticles; i++)
 		{
 			particles->push_back(new Particle(settings));
 		}

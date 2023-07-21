@@ -1,16 +1,9 @@
 
-*Code design
-**Separate MeshRenderer component
-
-*Optimization
-**Render Instancing for particles
-
 *Editor
 **Different configurations presets, ability to save and load a preset
 
 *Particle system
 **Setup max number of particles
-**Setup emition delay\cooldown
 **Particles Physics
 ***Gravity
 ***Collisions
