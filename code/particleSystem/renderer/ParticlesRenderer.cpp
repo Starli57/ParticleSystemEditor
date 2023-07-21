@@ -53,6 +53,25 @@ namespace ParticleSystemEditor
 			indices[ii + 5] = vi;
 		}
 
+		glm::mat4 models[squads];
+		for (int i = 0; i < squads; i++)
+		{
+			Particle* particle = particles->at(i);
+
+			models[i] = glm::mat4(1.0f);
+			models[i] = glm::translate(models[i], particle->GetPosition());
+			models[i] = glm::rotate(models[i], particle->GetRotation(), settings->rotationVector);
+			models[i] = glm::scale(models[i], Math::Lerp(settings->startScale, settings->endScale, particle->GetLifetimeAspect()));
+		}
+
+		for (int i = 0; i < squads; i++)
+		{
+			vertexes[i * 4].model = models[i];
+			vertexes[i * 4 + 1].model = models[i];
+			vertexes[i * 4 + 2].model = models[i];
+			vertexes[i * 4 + 3].model = models[i];
+		}
+
 		vao = vbo = ibo = 0;
 		glGenVertexArrays(1, &vao);
 		glGenBuffers(1, &vbo);
@@ -70,8 +89,21 @@ namespace ParticleSystemEditor
 		//2nd -> number of components (coordinates, like x y z w)
 		//5th -> stride[bytes]: offset between vertexes (if 1 vertex has 3 elements - offset must be 3 * sizeof(type)) 
 		//6th -> offset[bytes] to the initial element (if vertex has position and colors and you need to take colors)
-		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 		glEnableVertexAttribArray(0);
+		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
+
+		glEnableVertexAttribArray(1);
+		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, model));
+
+		glEnableVertexAttribArray(2);
+		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 1 * sizeof(glm::vec4)));
+
+		glEnableVertexAttribArray(3);
+		glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 2 * sizeof(glm::vec4)));
+
+		glEnableVertexAttribArray(4);
+		glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 3 * sizeof(glm::vec4)));
+
 
 		float screenAspect = screen->GetScreenAspect();
 
@@ -82,18 +114,13 @@ namespace ParticleSystemEditor
 		shader->setMat4("projection", projection);
 		shader->setMat4("view", view);
 
+
 		for (int i = 0; i < particles->size(); i++) 
 		{
 			Particle* particle = particles->at(i);
 
-			glm::mat4 model = glm::mat4(1.0f);
-			model = glm::translate(model, particle->GetPosition());
-			model = glm::rotate(model, particle->GetRotation(), settings->rotationVector);
-			model = glm::scale(model, Math::Lerp(settings->startScale, settings->endScale, particle->GetLifetimeAspect()));
-
 			glm::vec4 color = Math::Lerp(settings->startColor, settings->endColor, particle->GetLifetimeAspect());
 
-			shader->setMat4("model", model);
 			shader->setVec4("inColor", color);
 		}
 
