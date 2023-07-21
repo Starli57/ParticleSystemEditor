@@ -31,7 +31,7 @@ namespace ParticleSystemEditor
 	void ParticlesRenderer::Render()
 	{
 
-		const int squads = 10;
+		const int squads = 1000;
 
 		Rendering::Vertex vertexes[squads * 4];
 		uint32_t indices[squads * 6];
@@ -54,6 +54,7 @@ namespace ParticleSystemEditor
 		}
 
 		glm::mat4 models[squads];
+		glm::vec4 colors[squads];
 		for (int i = 0; i < squads; i++)
 		{
 			Particle* particle = particles->at(i);
@@ -62,6 +63,8 @@ namespace ParticleSystemEditor
 			models[i] = glm::translate(models[i], particle->GetPosition());
 			models[i] = glm::rotate(models[i], particle->GetRotation(), settings->rotationVector);
 			models[i] = glm::scale(models[i], Math::Lerp(settings->startScale, settings->endScale, particle->GetLifetimeAspect()));
+
+			colors[i] = Math::Lerp(settings->startColor, settings->endColor, particle->GetLifetimeAspect());
 		}
 
 		for (int i = 0; i < squads; i++)
@@ -70,6 +73,11 @@ namespace ParticleSystemEditor
 			vertexes[i * 4 + 1].model = models[i];
 			vertexes[i * 4 + 2].model = models[i];
 			vertexes[i * 4 + 3].model = models[i];
+			
+			vertexes[i * 4].color = colors[i];
+			vertexes[i * 4 + 1].color = colors[i];
+			vertexes[i * 4 + 2].color = colors[i];
+			vertexes[i * 4 + 3].color = colors[i];
 		}
 
 		vao = vbo = ibo = 0;
@@ -93,16 +101,19 @@ namespace ParticleSystemEditor
 		glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, sizeof(Vertex), (void*)0);
 
 		glEnableVertexAttribArray(1);
-		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, model));
+		glVertexAttribPointer(1, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, color)));
 
 		glEnableVertexAttribArray(2);
-		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 1 * sizeof(glm::vec4)));
+		glVertexAttribPointer(2, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)offsetof(Vertex, model));
 
 		glEnableVertexAttribArray(3);
-		glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 2 * sizeof(glm::vec4)));
+		glVertexAttribPointer(3, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 1 * sizeof(glm::vec4)));
 
 		glEnableVertexAttribArray(4);
-		glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 3 * sizeof(glm::vec4)));
+		glVertexAttribPointer(4, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 2 * sizeof(glm::vec4)));
+
+		glEnableVertexAttribArray(5);
+		glVertexAttribPointer(5, 4, GL_FLOAT, GL_FALSE, sizeof(Vertex), (const void*)(offsetof(Vertex, model) + 3 * sizeof(glm::vec4)));
 
 
 		float screenAspect = screen->GetScreenAspect();
@@ -113,16 +124,6 @@ namespace ParticleSystemEditor
 		glm::mat4 view = glm::mat4(1.0f);
 		shader->setMat4("projection", projection);
 		shader->setMat4("view", view);
-
-
-		for (int i = 0; i < particles->size(); i++) 
-		{
-			Particle* particle = particles->at(i);
-
-			glm::vec4 color = Math::Lerp(settings->startColor, settings->endColor, particle->GetLifetimeAspect());
-
-			shader->setVec4("inColor", color);
-		}
 
 		glBindVertexArray(vao);
 		glDrawElements(GL_TRIANGLES, squads * 6, GL_UNSIGNED_INT, 0);

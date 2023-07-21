@@ -8,6 +8,7 @@ namespace Rendering
 	{
 	public:
 		glm::vec3 position;
+		glm::vec4 color;
 		glm::mat4 model;
 	};
 }

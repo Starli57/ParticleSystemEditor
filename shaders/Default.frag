@@ -1,9 +1,10 @@
 #version 330 core
 
+in vec4 vertColor;
+
 out vec4 outColor;
-uniform vec4 inColor;
 
 void main()
 {
-    outColor = inColor;
+    outColor = vertColor;
 } 
