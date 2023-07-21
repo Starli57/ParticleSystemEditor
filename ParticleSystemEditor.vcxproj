@@ -161,7 +161,6 @@
     <ClCompile Include="libs\imgui\imgui_widgets.cpp" />
     <ClCompile Include="code\utility\time\Time.cpp" />
     <ClCompile Include="code\particleSystem\ParticlesEmitter.cpp" />
-    <ClCompile Include="code\editor\windows\presetsWindow\PresetsWindow.cpp" />
     <ClCompile Include="code\particleSystem\renderer\ParticlesRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -193,7 +192,6 @@
     <ClInclude Include="code\utility\reactValue\ReactValue.h" />
     <ClInclude Include="code\rendering\shaders\Shader.h" />
     <ClInclude Include="code\particleSystem\ParticlesEmitter.h" />
-    <ClInclude Include="code\editor\windows\presetsWindow\PresetsWindow.h" />
     <ClInclude Include="code\particleSystem\renderer\ParticlesRenderer.h" />
     <ClInclude Include="shaders\ShadersList.h" />
     <ClInclude Include="code\utility\time\Time.h" />

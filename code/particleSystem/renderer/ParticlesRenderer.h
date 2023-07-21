@@ -27,5 +27,10 @@ namespace ParticleSystemEditor
 	private:
 		ParticleSettings* settings;
 		Rendering::Shader* shader;
+
+		Rendering::Vertex* vertexes;
+		uint32_t* indices;
+
+		unsigned int vao, vbo, ibo;
 	};
 }

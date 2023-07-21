@@ -11,7 +11,7 @@ namespace ParticleSystemEditor
 	{
 		settings = new ParticleSettings();
 
-		int particlesLimit = 2500;
+		int particlesLimit = 1000;
 		particles = new std::vector<Particle*>();
 		particles->reserve(particlesLimit);
 
