@@ -2,6 +2,7 @@
 
 #include <glad/glad.h> 
 #include <GLFW/glfw3.h>
+#include <cmath>
 
 #include "../ParticleSettings.h"
 #include "../particle/Particle.h"

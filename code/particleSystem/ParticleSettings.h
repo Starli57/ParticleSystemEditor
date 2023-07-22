@@ -8,15 +8,23 @@ struct ParticleSettings
 {
 	ParticleSettings();
 
-	glm::vec4 startColor;
-	glm::vec4 endColor;
-
+	//environment
+	float nearHideDistanceMin;
+	float nearHideDistance;
+	float farHideDistance;
+	float farHideDistanceMax;
+	
+	//emission
 	glm::vec3 emissionPosition;
 	glm::vec3 emissionRadius;
 
 	int particlesPerEmission;
 	float emissionPeriod;
 
+	float minLifetime;
+	float maxLifetime;
+
+	//movement
 	glm::vec3 direction;
 	glm::vec3 directionNoise;
 
@@ -28,11 +36,12 @@ struct ParticleSettings
 	float minRotation;
 	float maxRotation;
 
+	//visual
+	glm::vec4 startColor;
+	glm::vec4 endColor;
+
 	glm::vec3 startScale;
 	glm::vec3 endScale;
-
-	float minLifetime;
-	float maxLifetime;
 
 };
 

@@ -37,7 +37,6 @@ namespace ParticleSystemEditor
 			indices[ii + 5] = vi;
 		}
 
-
 		shader = new Rendering::Shader(ShadersList::GetDefaultVertexPath(), ShadersList::GetDefaultFragmentPath());
 		shader->Use();
 	}
@@ -60,13 +59,27 @@ namespace ParticleSystemEditor
 		for (int i = 0; i < squads; i++)
 		{
 			Particle* particle = particles->at(i);
+			glm::vec3 position = particle->GetPosition();
 
 			glm::mat4 model = glm::mat4(1.0f);
-			model = glm::translate(model, particle->GetPosition());
+			model = glm::translate(model, position);
 			model = glm::rotate(model, particle->GetRotation(), settings->rotationVector);
 			model = glm::scale(model, Math::Lerp(settings->startScale, settings->endScale, particle->GetLifetimeAspect()));
 
 			glm::vec4 color = Math::Lerp(settings->startColor, settings->endColor, particle->GetLifetimeAspect());
+
+			float distance = abs(position.z);
+			if (distance < settings->nearHideDistance)
+			{
+				float nearT = Math::InverseLerp<float>(settings->nearHideDistanceMin, settings->nearHideDistance, distance);
+				color.a = Math::Lerp<float>(0, color.a, nearT);
+			}
+
+			if (distance > settings->farHideDistance)
+			{
+				float farT = Math::InverseLerp<float>(settings->farHideDistance, settings->farHideDistanceMax, distance);
+				color.a = Math::Lerp<float>(color.a, 0, farT);
+			}
 
 			for (int j = 0; j < 4; j++) 
 			{
@@ -126,10 +139,5 @@ namespace ParticleSystemEditor
 		glDeleteVertexArrays(1, &vao);
 		glDeleteBuffers(1, &vbo);
 		glDeleteBuffers(1, &ibo);
-
-		//for (Particle* particle : *particles)
-		//{
-		//	particle->Render();
-		//}
 	}
 }
