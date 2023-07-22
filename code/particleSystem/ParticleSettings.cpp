@@ -9,18 +9,18 @@ ParticleSettings::ParticleSettings()
 	farHideDistanceMax = 125;
 
 	//emission
-	emissionPosition = glm::vec3(0, 0, -250);
-	emissionRadius = glm::vec3(0, 0, 0);
+	emissionPosition = glm::vec3(0, 0, -200);
+	emissionRadius = glm::vec3(50, 50, 0);
 
-	particlesPerEmission = 1000;
-	emissionPeriod = 1;
+	particlesPerEmission = 50;
+	emissionPeriod = 0.1f;
 
 	minLifetime = 3;
-	maxLifetime = 7;
+	maxLifetime = 10;
 
 	//movement
-	direction = glm::vec3(0, 0, 5);
-	directionNoise = glm::vec3(1, 1, 2);
+	direction = glm::vec3(0, 0, 4);
+	directionNoise = glm::vec3(1, 1, 1);
 
 	rotationVector = glm::vec3(1, 1, 1);
 	minRotation = -2;
