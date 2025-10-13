@@ -7,13 +7,14 @@
 #include <iostream>
 #include <stdio.h>
 
+#include <glad/glad.h> 
+
 #include "Application.h"
 #include "../utility/di/Di.h"
 #include "../utility/time/Time.h"
 #include "../utility/ImguiStyles.h"
 #include "../settings/ScreenSettings.h"
 
-#include <glad/glad.h> 
 #include <GLFW/glfw3.h>
 
 #define MLogger Utilities::DI::Get<Logging::Logger>()
